@@ -1,5 +1,5 @@
 /*
-	Mundo Extreme: cÛdigo comenzado por Benjes el 16/02/2020.
+	Mundo Extreme: c√≥digo comenzado por Benjes el 16/02/2020.
 */
 
 #include <a_samp>
@@ -7,7 +7,7 @@
 #define MAX_NPC (0)
 
 #undef MAX_PLAYERS
-#define MAX_PLAYERS (150)
+#define MAX_PLAYERS (100)
 
 #undef MAX_VEHICLES
 #define MAX_VEHICLES (500)
@@ -50,12 +50,12 @@ AMX()
 	#pragma unused str
 }
 
-/* ConfiguraciÛn */
+/* Configuraci√≥n */
 #define PROJECT "Mundo Extreme"
-#define SERVER_NAME ""PROJECT" | T˙ eres el protagonista"
+#define SERVER_NAME ""PROJECT" | T√∫ eres el protagonista"
 #define SERVER_WEB  "mundo-extreme.com"
 #define SERVER_TYPE "Role Play"
-#define SERVER_LANG "EspaÒol"
+#define SERVER_LANG "Espa√±ol"
 #define SERVER_MAP "S. A."
 #define SERVER_RCON "#daresdar#"
 
@@ -67,27 +67,27 @@ AMX()
 #define RGBToHex(%0,%1,%2,%3) %0 << 24 | %1 << 16 | %2 << 8 | %3
 #define DELAY (5)
 
-/* Timer¥s */
+/* Timer¬¥s */
 #define TIMER_REGISTER (0)
 #define TIMER_DIALOG_REGISTER (1)
 
-/* DefiniciÛn de modelos */
+/* Definici√≥n de modelos */
 #define MODEL_SELECTION_REGISTER (0)
 
 /* Dialogos de ingreso, registro y errores de ambos */
-#define FORMAT_LOGIN ""COL_CONTENT"Este personaje ya est· registrado,\nse conectÛ "COL_SERVER"el %s"COL_CONTENT" por ˙ltima vez.\
-\n\n"COL_CONTENT_TWO"Tienes "COL_TOMATO"un total de %d intentos"COL_CONTENT_TWO" para ingresar la contraseÒa correctamente"COL_CONTENT"."
+#define FORMAT_LOGIN ""COL_CONTENT"Este personaje ya est√° registrado,\nse conect√≥ "COL_SERVER"el %s"COL_CONTENT" por √∫ltima vez.\
+\n\n"COL_CONTENT_TWO"Tienes "COL_TOMATO"un total de %d intentos"COL_CONTENT_TWO" para ingresar la contrase√±a correctamente"COL_CONTENT"."
 
-#define FORMAT_LOGIN_ERROR ""COL_CONTENT"Este personaje ya est· registrado,\nse conectÛ "COL_SERVER"el %s"COL_CONTENT" por ˙ltima vez.\
-\n\n"COL_CONTENT_TWO"La contraseÒa errÛnea. Usaste "COL_TOMATO"%d de %d intentos."COL_CONTENT_TWO" IntÈntalo nuevamente"COL_CONTENT"..."
+#define FORMAT_LOGIN_ERROR ""COL_CONTENT"Este personaje ya est√° registrado,\nse conect√≥ "COL_SERVER"el %s"COL_CONTENT" por √∫ltima vez.\
+\n\n"COL_CONTENT_TWO"La contrase√±a err√≥nea. Usaste "COL_TOMATO"%d de %d intentos."COL_CONTENT_TWO" Int√©ntalo nuevamente"COL_CONTENT"..."
 
-#define FORMAT_REGISTER ""COL_CONTENT"Este personaje no est· registrado. RegÌstralo "COL_SERVER"para comenzar a jugar"COL_CONTENT".\
-\n\n"COL_CONTENT_TWO"Ingresa una contraseÒa "COL_TOMATO"no menor a %d caracteres "COL_CONTENT_TWO"ni "COL_TOMATO"mayor a %d caracteres"COL_CONTENT"."
+#define FORMAT_REGISTER ""COL_CONTENT"Este personaje no est√° registrado. Reg√≠stralo "COL_SERVER"para comenzar a jugar"COL_CONTENT".\
+\n\n"COL_CONTENT_TWO"Ingresa una contrase√±a "COL_TOMATO"no menor a %d caracteres "COL_CONTENT_TWO"ni "COL_TOMATO"mayor a %d caracteres"COL_CONTENT"."
 
-#define FORMAT_REGISTER_ERROR ""COL_CONTENT"Este personaje no est· registrado. RegÌstralo "COL_SERVER"para comenzar a jugar"COL_CONTENT".\
-\n\n"COL_CONTENT_TWO"Hey. LeÈme. Debe ser "COL_TOMATO"no menor a %d caracteres "COL_CONTENT_TWO"ni "COL_TOMATO"mayor a %d caracteres"COL_CONTENT"."
+#define FORMAT_REGISTER_ERROR ""COL_CONTENT"Este personaje no est√° registrado. Reg√≠stralo "COL_SERVER"para comenzar a jugar"COL_CONTENT".\
+\n\n"COL_CONTENT_TWO"Hey. Le√©me. Debe ser "COL_TOMATO"no menor a %d caracteres "COL_CONTENT_TWO"ni "COL_TOMATO"mayor a %d caracteres"COL_CONTENT"."
 
-/* Registro e inicio de sesiÛn */
+/* Registro e inicio de sesi√≥n */
 #define THREAD_CHECK_ACCOUNT (1)
 #define THREAD_CREATE_CHAR (2)
 #define THREAD_LOGIN (3)
@@ -102,7 +102,7 @@ AMX()
 #define MAX_SECURITY_QUESTION_SIZE (128)
 #define MAX_SECURITY_ANSWER_SIZE (64)
 
-/* M·ximos generales */
+/* M√°ximos generales */
 #define MAX_ANNOUNCES (10)
 #define MAX_REPORTS (10)
 #define MAX_DOUBTS (10)
@@ -136,7 +136,7 @@ AMX()
 	SendClientMessageEx(%0, COLOR_GREY, ""%1)
 
 #define SendAdminAction(%0,%1) \
-	SendClientMessageEx(%0, COLOR_ADMIN_TWO, "ó "%1)
+	SendClientMessageEx(%0, COLOR_ADMIN_TWO, "‚Äî "%1)
 
 #define SendWarningMessage(%0,%1) \
 	SendClientMessageEx(%0, COLOR_TOMATO, ""%1)
@@ -194,17 +194,17 @@ new FemenineClothes[18] = {
 
 new const SecurityQuestions[][128] =
 {
-	"øCu·l es tu comida preferida?",
-	"øCÛmo es el nombre de tu mascota?",
-	"øQuÈ palabra te define?",
- 	"øCu·l fue el primer deporte que practicaste?",
-	"øCÛmo se llama el deporte que practicas?",
-	"øCu·l es el nombre de tu equipo de f˙tbol favorito?",
-	"øCu·l es el nombre de tu pelÌcula favorita?",
-	"øCu·l es el nombre de tu serie favorita?",
-	"øCu·l es el nombre de la persona que besaste por primera vez?",
-	"øCu·l es el nombre de la marca de tu primer vehÌculo?",
-	"øCÛmo se llama la empresa donde trabajas?"
+	"¬øCu√°l es tu comida preferida?",
+	"¬øC√≥mo es el nombre de tu mascota?",
+	"¬øQu√© palabra te define?",
+ 	"¬øCu√°l fue el primer deporte que practicaste?",
+	"¬øC√≥mo se llama el deporte que practicas?",
+	"¬øCu√°l es el nombre de tu equipo de f√∫tbol favorito?",
+	"¬øCu√°l es el nombre de tu pel√≠cula favorita?",
+	"¬øCu√°l es el nombre de tu serie favorita?",
+	"¬øCu√°l es el nombre de la persona que besaste por primera vez?",
+	"¬øCu√°l es el nombre de la marca de tu primer veh√≠culo?",
+	"¬øC√≥mo se llama la empresa donde trabajas?"
 };
 
 enum announceData
@@ -260,7 +260,7 @@ stock GetDurationEx(time)
 	else if (time >= 3600 && time < 86400) format(str, sizeof(str), (time >= 7200) ? ("%d horas, %d minutos") : ("%d hora, %d minutos"), hours, (time - (3600 * hours)) / 60);
 	else if (time >= 86400)
 	{
-		format(str, sizeof(str), (time >= 172800) ? ("%d dÌas, %d horas, %d minutos") : ("%d dÌa, %d horas, %d minutos"),
+		format(str, sizeof(str), (time >= 172800) ? ("%d d√≠as, %d horas, %d minutos") : ("%d d√≠a, %d horas, %d minutos"),
 			days,
 			(time - (86400 * days)) / 3600,
 		 	(time - (3600 * hours)) / 60
@@ -283,10 +283,10 @@ Show_Speedometer(playerid)
 	/* Relojes */
 	for (new speedo = 0; speedo < 2; speedo ++) PlayerTextDrawShow(playerid, TEXT_DRAW_ALL[playerid][speedo]);
 
-	/* N˙meros */
+	/* N√∫meros */
 	for (new speedo = 0; speedo < 12; speedo ++) PlayerTextDrawShow(playerid, TEXT_DRAW_SPEEDO[playerid][speedo]);
 
-	/* GasolÌmetro */
+	/* Gasol√≠metro */
 	for (new speedo = 0; speedo < 5; speedo ++) PlayerTextDrawShow(playerid, TEXT_DRAW_GAS[playerid][speedo]);
 
 	PlayerTextDrawShow(playerid, PlayerData[playerid][TEXT_DRAW][7]), // Velocidad
@@ -302,10 +302,10 @@ Hide_Speedometer(playerid)
 	/* Relojes */
 	for (new speedo = 0; speedo < 2; speedo ++) PlayerTextDrawHide(playerid, TEXT_DRAW_ALL[playerid][speedo]);
 
-	/* N˙meros */
+	/* N√∫meros */
 	for (new speedo = 0; speedo < 12; speedo ++) PlayerTextDrawHide(playerid, TEXT_DRAW_SPEEDO[playerid][speedo]);
 
-	/* GasolÌmetro */
+	/* Gasol√≠metro */
 	for (new speedo = 0; speedo < 5; speedo ++) PlayerTextDrawHide(playerid, TEXT_DRAW_GAS[playerid][speedo]);
 	
  	PlayerTextDrawHide(playerid, PlayerData[playerid][TEXT_DRAW][7]), // Velocidad
@@ -341,7 +341,7 @@ Update_Speedometer(playerid)
 
 	  		PlayerTextDrawSetString(playerid, PlayerData[playerid][TEXT_DRAW][7], Desbug(str));
 
-            /* KilÛmetros */
+            /* Kil√≥metros */
 			if (km < 10) format(str, sizeof(str), "00000000%d", km);
 			else if (km > 9 && km < 100) format(str, sizeof(str), "0000000%d", km);
 			else if (km > 99 && km < 1000) format(str, sizeof(str), "000000%d", km);
@@ -378,7 +378,7 @@ stock Update_SpeedoColor(playerid)
 			    /* Relojes */
 				for (new speedo = 0; speedo < 2; speedo ++)
 				{
-			  		if (CarData[carid][carCOLOR_1] == 205) // Si es un az˙l muy oscuro, convertirlo en un az˙l m·s claro
+			  		if (CarData[carid][carCOLOR_1] == 205) // Si es un az√∫l muy oscuro, convertirlo en un az√∫l m√°s claro
 		  			{
 					  	PlayerTextDrawColor(playerid, TEXT_DRAW_ALL[playerid][speedo], ColorToHex_LightsOff[79]);
 				  	}
@@ -392,7 +392,7 @@ stock Update_SpeedoColor(playerid)
 					PlayerTextDrawShow(playerid, PlayerText:TEXT_DRAW_ALL[playerid][speedo]);
 				}
 				
-				/* N˙meros */
+				/* N√∫meros */
 				for (new speedo = 0; speedo < 12; speedo ++)
 				{
 					PlayerTextDrawColor(playerid, TEXT_DRAW_SPEEDO[playerid][speedo], COLOR_TEXTDRAW);
@@ -401,7 +401,7 @@ stock Update_SpeedoColor(playerid)
 					PlayerTextDrawShow(playerid, PlayerText:TEXT_DRAW_SPEEDO[playerid][speedo]);
 				}
 
-				/* GasolÌmetro */
+				/* Gasol√≠metro */
 				for (new speedo = 0; speedo < 5; speedo ++)
 				{
 					PlayerTextDrawColor(playerid, TEXT_DRAW_GAS[playerid][speedo], COLOR_TEXTDRAW);
@@ -410,7 +410,7 @@ stock Update_SpeedoColor(playerid)
 					PlayerTextDrawShow(playerid, PlayerText:TEXT_DRAW_GAS[playerid][speedo]);
 				}
 
-				/* EstadÌsticas en texto */
+				/* Estad√≠sticas en texto */
 				for (new speedo = 7; speedo < 10; speedo ++)
 				{
 					PlayerTextDrawColor(playerid, PlayerData[playerid][TEXT_DRAW][speedo], COLOR_TEXTDRAW);
@@ -438,7 +438,7 @@ stock Update_SpeedoColor(playerid)
 					PlayerTextDrawShow(playerid, PlayerText:TEXT_DRAW_ALL[playerid][speedo]);
 				}
 				
-				/* N˙meros */
+				/* N√∫meros */
 				for (new speedo = 0; speedo < 12; speedo ++)
 				{
 					PlayerTextDrawColor(playerid, TEXT_DRAW_SPEEDO[playerid][speedo], COLOR_WHITE);
@@ -447,7 +447,7 @@ stock Update_SpeedoColor(playerid)
 					PlayerTextDrawShow(playerid, PlayerText:TEXT_DRAW_SPEEDO[playerid][speedo]);
 				}
 
-				/* GasolÌmetro */
+				/* Gasol√≠metro */
 				for (new speedo = 0; speedo < 5; speedo ++)
 				{
 					PlayerTextDrawColor(playerid, TEXT_DRAW_GAS[playerid][speedo], COLOR_WHITE);
@@ -456,7 +456,7 @@ stock Update_SpeedoColor(playerid)
 					PlayerTextDrawShow(playerid, PlayerText:TEXT_DRAW_GAS[playerid][speedo]);
 				}
 
-				/* EstadÌsticas en texto */
+				/* Estad√≠sticas en texto */
 				for (new speedo = 7; speedo < 10; speedo ++)
 				{
 					PlayerTextDrawColor(playerid, PlayerData[playerid][TEXT_DRAW][speedo], COLOR_WHITE);
@@ -483,7 +483,7 @@ stock SetVehicleColor(vehicleid, color1, color2)
 	    Car_Save(id);
 	}
 
-    foreach (new i : Player) // Actualiza el color del velocÌmetro
+    foreach (new i : Player) // Actualiza el color del veloc√≠metro
 	{
   		if (IsSpeedoVehicle(vehicleid) && (SQL_IsLogged(i) && GetPlayerVehicleID(i) == vehicleid))
   		{
@@ -1092,10 +1092,10 @@ SQL_Connect()
         fclose(file_handle);
 
         printf("\n\n\t=============================\n\
-			\t ConexiÛn:\t%s\n\
+			\t Conexi√≥n:\t%s\n\
 			\t Usuario:\t%s\n\
 			\t Base de datos:\t%s\n\
-			\t ContraseÒa:\t%s\n\
+			\t Contrase√±a:\t%s\n\
 			\t=============================\n\n",
 			mysql_host,
 			mysql_user,
@@ -1111,8 +1111,8 @@ SQL_Connect()
 
 main()
 {
-	if (DataConnect == 1) printf("\tConexiÛn establecida. "PROJECT" %s.\n", SERVER_VERSION);
-	else if (DataConnect == 0) print("\tNo se pudo establecer conexiÛn.\n");
+	if (DataConnect == 1) printf("\tConexi√≥n establecida. "PROJECT" %s.\n", SERVER_VERSION);
+	else if (DataConnect == 0) print("\tNo se pudo establecer conexi√≥n.\n");
 }
 
 timer Update_Points[500]()
@@ -1121,7 +1121,7 @@ timer Update_Points[500]()
     {
 		if (!IsPlayerPaused(playerid))
 		{
-		    /* InformaciÛn en pantalla: checkpoints */
+		    /* Informaci√≥n en pantalla: checkpoints */
 			if (PlayerData[playerid][KILLED] != 1)
 		 	{
 				static
@@ -1149,7 +1149,7 @@ timer Update_Info[500]()
 				
 		if (!IsPlayerPaused(playerid))
 		{
-		    /* InformaciÛn en pantalla: textdraws y checkpoints */
+		    /* Informaci√≥n en pantalla: textdraws y checkpoints */
 			if (PlayerData[playerid][KILLED] != 1)
 		 	{
 				static
@@ -1217,7 +1217,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
     if (IsPlayerNPC(playerid))
 	    return true;
 
-	if (oldstate == PLAYER_STATE_DRIVER || oldstate == PLAYER_STATE_PASSENGER) // Cuando se baja de un vehÌculo
+	if (oldstate == PLAYER_STATE_DRIVER || oldstate == PLAYER_STATE_PASSENGER) // Cuando se baja de un veh√≠culo
 	{
  	    if (GetPlayerSpecialAction(playerid) == SPECIAL_ACTION_CARRY || GetPlayerSpecialAction(playerid) == SPECIAL_ACTION_CUFFED)
 	        return RemoveFromVehicle(playerid);
@@ -1225,7 +1225,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		Hide_Speedometer(playerid);
 	}
 
-	if ((newstate == PLAYER_STATE_DRIVER || newstate == PLAYER_STATE_PASSENGER)) // Cuando se sube a un vehÌculo
+	if ((newstate == PLAYER_STATE_DRIVER || newstate == PLAYER_STATE_PASSENGER)) // Cuando se sube a un veh√≠culo
 	{
  		new
 	    	vehicleid = GetPlayerVehicleID(playerid);
@@ -1240,7 +1240,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 
 public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 {
-	/* Cerradura de vehÌculos */
+	/* Cerradura de veh√≠culos */
 	if (PRESSED(KEY_SPRINT | KEY_CTRL_BACK) || PRESSED(KEY_HANDBRAKE | KEY_CROUCH))
  	{
  		static
@@ -1272,14 +1272,14 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					if (!IsABike(CarData[id][carVEHICLE]))
 					{
 						format(v, sizeof(v), "~w~%s trabado.", ReturnVehicleName(CarData[id][carVEHICLE], 2));
-						format(b, sizeof(b), "* trabÛ las puertas del %s. *", ReturnVehicleName(CarData[id][carVEHICLE], 1));
+						format(b, sizeof(b), "* trab√≥ las puertas del %s. *", ReturnVehicleName(CarData[id][carVEHICLE], 1));
 
 						SetPlayerChatBubble(playerid, b, COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
 					}
 					else
 					{
 						format(v, sizeof(v), "~w~%s con seguro.", ReturnVehicleName(CarData[id][carVEHICLE], 2));
-						format(b, sizeof(b), "* asegurÛ su %s. *", ReturnVehicleName(CarData[id][carVEHICLE], 1));
+						format(b, sizeof(b), "* asegur√≥ su %s. *", ReturnVehicleName(CarData[id][carVEHICLE], 1));
 
 						SetPlayerChatBubble(playerid, b, COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
 					}
@@ -1302,14 +1302,14 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 					if (!IsABike(CarData[id][carVEHICLE]))
 					{
 						format(v, sizeof(v), "~w~%s destrabado.", ReturnVehicleName(CarData[id][carVEHICLE], 2));
-						format(b, sizeof(b), "* destrabÛ las puertas del %s. *", ReturnVehicleName(CarData[id][carVEHICLE], 1));
+						format(b, sizeof(b), "* destrab√≥ las puertas del %s. *", ReturnVehicleName(CarData[id][carVEHICLE], 1));
 
 						SetPlayerChatBubble(playerid, b, COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
 					}
 					else
 					{
 						format(v, sizeof(v), "~w~%s sin seguro.", ReturnVehicleName(CarData[id][carVEHICLE], 2));
-						format(b, sizeof(b), "* le sacÛ el seguro a su %s. *", ReturnVehicleName(CarData[id][carVEHICLE], 1));
+						format(b, sizeof(b), "* le sac√≥ el seguro a su %s. *", ReturnVehicleName(CarData[id][carVEHICLE], 1));
 
 						SetPlayerChatBubble(playerid, b, COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
 					}
@@ -1337,12 +1337,12 @@ public OnGameModeInit()
 
     SetMaxConnections(3, e_FLOOD_ACTION_BAN);
     
-    /* Timer¥s generales */
+    /* Timer¬¥s generales */
     repeat Update_Points();
     repeat Update_Info();
     repeat Update_Second();
     
- 	/* ConfiguraciÛn de SA:MP */
+ 	/* Configuraci√≥n de SA:MP */
     ManualVehicleEngineAndLights();
 	DisableInteriorEnterExits();
 	
@@ -1364,7 +1364,7 @@ public OnGameModeInit()
 	SendRconCommand("rcon_password "SERVER_RCON"");
 	SendRconCommand("gravity 0.010");
 	
-	/* LÌmites */
+	/* L√≠mites */
 	SendRconCommand("messageholelimit 3500");
 	SendRconCommand("ackslimit 4500");
 	SendRconCommand("messageslimit 1500");
@@ -1436,9 +1436,9 @@ Reset_Email(playerid)
 	format(query, sizeof(query), "UPDATE `accounts` SET `EMAIL` = '...' WHERE `NAME` = '%s'", PlayerData[playerid][NAME]);
 	mysql_tquery(SQL_CONNECTION, query);
 
-	Dialog_Show(playerid, CreateEmail, DIALOG_STYLE_INPUT, ""COL_TITLE"RegÌstrate (2/4)",
-		""COL_CONTENT"Ingresa una direcciÛn de correo electrÛnico.\n\n\
- 		"COL_CONTENT_TWO"La direcciÛn debe ser "COL_TOMATO"nombre@dominio.tipo"COL_CONTENT".", "Siguiente", "");
+	Dialog_Show(playerid, CreateEmail, DIALOG_STYLE_INPUT, ""COL_TITLE"Reg√≠strate (2/4)",
+		""COL_CONTENT"Ingresa una direcci√≥n de correo electr√≥nico.\n\n\
+ 		"COL_CONTENT_TWO"La direcci√≥n debe ser "COL_TOMATO"nombre@dominio.tipo"COL_CONTENT".", "Siguiente", "");
 }
 
 SendPlayerToPlayer(playerid, targetid)
@@ -1487,7 +1487,7 @@ Dialog:RegisterScreen(playerid, response, listitem, inputtext[])
  		    title[64];
  		    
 		format(content, sizeof(content), FORMAT_REGISTER_ERROR, MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH);
-		format(title, sizeof(title), ""COL_TITLE"Oops. Hola, %s. RegÌstrate (1/4)", PlayerName(playerid));
+		format(title, sizeof(title), ""COL_TITLE"Oops. Hola, %s. Reg√≠strate (1/4)", PlayerName(playerid));
 		
    		Dialog_Show(playerid, RegisterScreen, DIALOG_STYLE_INPUT, title, content, "Registrar", "");
 	}
@@ -1517,8 +1517,8 @@ Dialog:CreateEmail(playerid, response, listitem, inputtext[])
 	{
 		if (!IsValidEmail(inputtext))
 		{
-  	    	Dialog_Show(playerid, CreateEmail, DIALOG_STYLE_INPUT, ""COL_TITLE"Oops. RegÌstrate (2/4)", ""COL_CONTENT"La direcciÛn que ingresaste no es v·lida.\n\n\
-				"COL_CONTENT_TWO"La direcciÛn debe ser "COL_TOMATO"nombre@dominio.tipo"COL_CONTENT_TWO". IntÈntalo nuevamente"COL_CONTENT"...", "Siguiente", "");
+  	    	Dialog_Show(playerid, CreateEmail, DIALOG_STYLE_INPUT, ""COL_TITLE"Oops. Reg√≠strate (2/4)", ""COL_CONTENT"La direcci√≥n que ingresaste no es v√°lida.\n\n\
+				"COL_CONTENT_TWO"La direcci√≥n debe ser "COL_TOMATO"nombre@dominio.tipo"COL_CONTENT_TWO". Int√©ntalo nuevamente"COL_CONTENT"...", "Siguiente", "");
 				
 			return true;
 		}
@@ -1548,7 +1548,7 @@ Dialog:ConfirmEmail(playerid, response, listitem, inputtext[])
 		    strcat(list, "\n");
 		}
 		
-		Dialog_Show(playerid, SelectQuestion, DIALOG_STYLE_TABLIST_HEADERS, ""COL_TITLE"RegÌstrate (3/4)", list, "Siguiente", "Atr·s");
+		Dialog_Show(playerid, SelectQuestion, DIALOG_STYLE_TABLIST_HEADERS, ""COL_TITLE"Reg√≠strate (3/4)", list, "Siguiente", "Atr√°s");
 	}
 	else Reset_Email(playerid);
 	return true;
@@ -1563,12 +1563,12 @@ Dialog:SelectQuestion(playerid, response, listitem, inputtext[])
         
 		new string[310];
 		format(string, sizeof(string),  ""COL_CONTENT"Escogiste \""COL_TOMATO"%s"COL_CONTENT"\",\n\
-			"COL_CONTENT"esta respuesta de seguridad te servir· para recuperar la contraseÒa en caso de que se te olvide.\n\n\
-			"COL_CONTENT_TWO"Contesta la pregunta aquÌ. No le des importancia a las may˙sculas y min˙sculas"COL_CONTENT".",
+			"COL_CONTENT"esta respuesta de seguridad te servir√° para recuperar la contrase√±a en caso de que se te olvide.\n\n\
+			"COL_CONTENT_TWO"Contesta la pregunta aqu√≠. No le des importancia a las may√∫sculas y min√∫sculas"COL_CONTENT".",
 			SecurityQuestions[listitem]
 		);
 		
-		Dialog_Show(playerid, InsertAnswer, DIALOG_STYLE_INPUT, ""COL_TITLE"RegÌstrate (4/4)", string, "Siguiente", "Atr·s");
+		Dialog_Show(playerid, InsertAnswer, DIALOG_STYLE_INPUT, ""COL_TITLE"Reg√≠strate (4/4)", string, "Siguiente", "Atr√°s");
 	}
 	else Reset_Email(playerid);
 	return true;
@@ -1582,14 +1582,14 @@ Dialog:InsertAnswer(playerid, response, listitem, inputtext[])
 		{
 	  		new string[310];
 			format(string, sizeof(string),  ""COL_CONTENT"Escogiste \""COL_TOMATO"%s"COL_CONTENT"\",\n\
-				"COL_CONTENT"esta respuesta de seguridad te servir· para recuperar la contraseÒa en caso de que se te olvide.\n\n\
+				"COL_CONTENT"esta respuesta de seguridad te servir√° para recuperar la contrase√±a en caso de que se te olvide.\n\n\
 				"COL_CONTENT_TWO"La respuesta debe ser "COL_TOMATO"mayor a %d caracteres"COL_CONTENT_TWO" y "COL_TOMATO"menor a %d caracteres"COL_CONTENT".",
 				PlayerData[playerid][SECURITY_QUESTION],
 				MIN_PASSWORD_LENGTH,
 				MAX_PASSWORD_LENGTH
 			);
 			
-			Dialog_Show(playerid, InsertAnswer, DIALOG_STYLE_INPUT, ""COL_TITLE"Oops. RegÌstrate (4/4)", string, "Terminar", "Atr·s");
+			Dialog_Show(playerid, InsertAnswer, DIALOG_STYLE_INPUT, ""COL_TITLE"Oops. Reg√≠strate (4/4)", string, "Terminar", "Atr√°s");
 			return true;
 		}
 		else
@@ -1603,13 +1603,13 @@ Dialog:InsertAnswer(playerid, response, listitem, inputtext[])
 		    format(PlayerData[playerid][SECURITY_ANSWER], MAX_SECURITY_ANSWER_SIZE, inputtext);
 		    
       		new content[485];
-			format(content, sizeof(content), ""COL_CONTENT"Listo. Has terminado de configurar tu cuenta y est· lista,\n\
-				lo siguiente es modelar las caracterÌsticas de "COL_SERVER"%s"COL_CONTENT".\n\
-				\n"COL_CONTENT_TWO"Si hay algo que sientas que tienes modificar, pulsa "COL_TOMATO"atr·s"COL_CONTENT_TWO". De lo contrario, empecemos"COL_CONTENT"...",
+			format(content, sizeof(content), ""COL_CONTENT"Listo. Has terminado de configurar tu cuenta y est√° lista,\n\
+				lo siguiente es modelar las caracter√≠sticas de "COL_SERVER"%s"COL_CONTENT".\n\
+				\n"COL_CONTENT_TWO"Si hay algo que sientas que tienes modificar, pulsa "COL_TOMATO"atr√°s"COL_CONTENT_TWO". De lo contrario, empecemos"COL_CONTENT"...",
 				PlayerName(playerid)
 			);
 
-			Dialog_Show(playerid, FinishRegister, DIALOG_STYLE_MSGBOX, ""COL_TITLE"Tu cuenta ya est· lista", content, "Empezar", "Atr·s");
+			Dialog_Show(playerid, FinishRegister, DIALOG_STYLE_MSGBOX, ""COL_TITLE"Tu cuenta ya est√° lista", content, "Empezar", "Atr√°s");
 		}
 	}
 	else
@@ -1631,7 +1631,7 @@ Dialog:InsertAnswer(playerid, response, listitem, inputtext[])
 		    strcat(list, "\n");
 		}
 
-		Dialog_Show(playerid, SelectQuestion, DIALOG_STYLE_TABLIST_HEADERS, ""COL_TITLE"RegÌstrate (3/4)", list, "Siguiente", "Atr·s");
+		Dialog_Show(playerid, SelectQuestion, DIALOG_STYLE_TABLIST_HEADERS, ""COL_TITLE"Reg√≠strate (3/4)", list, "Siguiente", "Atr√°s");
 	}
 	return true;
 }
@@ -1653,12 +1653,12 @@ Dialog:FinishRegister(playerid, response, listitem, inputtext[])
 
 		new string[310];
 		format(string, sizeof(string),  ""COL_CONTENT"Escogiste \""COL_TOMATO"%s"COL_CONTENT"\",\n\
-			"COL_CONTENT"esta respuesta de seguridad te servir· para recuperar la contraseÒa en caso de que se te olvide.\n\n\
-			"COL_CONTENT_TWO"Contesta la pregunta aquÌ. No le des importancia a las may˙sculas o min˙sculas"COL_CONTENT".",
+			"COL_CONTENT"esta respuesta de seguridad te servir√° para recuperar la contrase√±a en caso de que se te olvide.\n\n\
+			"COL_CONTENT_TWO"Contesta la pregunta aqu√≠. No le des importancia a las may√∫sculas o min√∫sculas"COL_CONTENT".",
 			PlayerData[playerid][SECURITY_QUESTION]
 		);
 
-		Dialog_Show(playerid, InsertAnswer, DIALOG_STYLE_INPUT, ""COL_TITLE"RegÌstrate (4/4)", string, "Siguiente", "Atr·s");
+		Dialog_Show(playerid, InsertAnswer, DIALOG_STYLE_INPUT, ""COL_TITLE"Reg√≠strate (4/4)", string, "Siguiente", "Atr√°s");
 	}
 	return true;
 }
@@ -1668,9 +1668,9 @@ Dialog:Gender(playerid, response, listitem, inputtext[])
 	if (response) PlayerData[playerid][GENDER] = 1;
 	else if (!response) PlayerData[playerid][GENDER] = 2;
 
-	Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"ConfiguraciÛn (2/3)",
+	Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"Configuraci√≥n (2/3)",
 		""COL_CONTENT"Escoge una fecha de nacimiento para tu personaje.\n\n\
-		"COL_CONTENT_TWO"Debes usar el formato "COL_TOMATO"20/09/2000"COL_CONTENT".", "Siguiente", "Atr·s");
+		"COL_CONTENT_TWO"Debes usar el formato "COL_TOMATO"20/09/2000"COL_CONTENT".", "Siguiente", "Atr√°s");
 
 	return true;
 }
@@ -1691,30 +1691,30 @@ Dialog:DateBirth(playerid, response, listitem, inputtext[])
 
 	    if (sscanf(inputtext, "p</>ddd", iDay, iMonth, iYear))
 		{
-			Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"ConfiguraciÛn (2/3)",
+			Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"Configuraci√≥n (2/3)",
 				""COL_CONTENT"Escoge una fecha de nacimiento para tu personaje.\n\n\
-				"COL_CONTENT_TWO"El formato que usaste est· mal. Debe ser, por ejemplo "COL_TOMATO"20/09/2000"COL_CONTENT".", "Siguiente", "Atr·s");
+				"COL_CONTENT_TWO"El formato que usaste est√° mal. Debe ser, por ejemplo "COL_TOMATO"20/09/2000"COL_CONTENT".", "Siguiente", "Atr√°s");
             return true;
 		}
 		else if (iYear < 1900 || iYear > 2005)
 		{
-			Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"ConfiguraciÛn (2/3)",
+			Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"Configuraci√≥n (2/3)",
 				""COL_CONTENT"Escoge una fecha de nacimiento para tu personaje.\n\n\
-				"COL_CONTENT_TWO"El formato est· mal. El aÒo "COL_TOMATO"debe ser desde 1900 hasta 2005"COL_CONTENT".", "Siguiente", "Atr·s");
+				"COL_CONTENT_TWO"El formato est√° mal. El a√±o "COL_TOMATO"debe ser desde 1900 hasta 2005"COL_CONTENT".", "Siguiente", "Atr√°s");
             return true;
 		}
 		else if (iMonth < 1 || iMonth > 12)
 		{
-			Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"ConfiguraciÛn (2/3)",
+			Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"Configuraci√≥n (2/3)",
 				""COL_CONTENT"Escoge una fecha de nacimiento para tu personaje.\n\n\
-				"COL_CONTENT_TWO"El formato est· mal. El mes "COL_TOMATO"debe ser desde 1 hasta 12"COL_CONTENT".", "Siguiente", "Atr·s");
+				"COL_CONTENT_TWO"El formato est√° mal. El mes "COL_TOMATO"debe ser desde 1 hasta 12"COL_CONTENT".", "Siguiente", "Atr√°s");
             return true;
 		}
 		else if (iDay < 1 || iDay > MonthDays[iMonth - 1])
 		{
-  			Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"ConfiguraciÛn (2/3)",
+  			Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"Configuraci√≥n (2/3)",
 				""COL_CONTENT"Escoge una fecha de nacimiento para tu personaje.\n\n\
-				"COL_CONTENT_TWO"Algunos meses (como ese) "COL_TOMATO"no tienen tantos dÌas"COL_CONTENT_TWO". Vamos otra vez:", "Siguiente", "Atr·s");
+				"COL_CONTENT_TWO"Algunos meses (como ese) "COL_TOMATO"no tienen tantos d√≠as"COL_CONTENT_TWO". Vamos otra vez:", "Siguiente", "Atr√°s");
 			return true;
 		}
 
@@ -1738,11 +1738,11 @@ Dialog:DateBirth(playerid, response, listitem, inputtext[])
 			}
 		}
 
-	    ShowPlayerDialog(playerid, MODEL_SELECTION_REGISTER, DIALOG_STYLE_PREVIEW_MODEL, Desbug("ConfiguraciÛn (3/3)"), dialog, "Terminar", Desbug("Atr·s"));
+	    ShowPlayerDialog(playerid, MODEL_SELECTION_REGISTER, DIALOG_STYLE_PREVIEW_MODEL, Desbug("Configuraci√≥n (3/3)"), dialog, "Terminar", Desbug("Atr√°s"));
 	}
 	else
 	{
-	    Dialog_Show(playerid, Gender, DIALOG_STYLE_MSGBOX, ""COL_TITLE"ConfiguraciÛn (1/3)", ""COL_CONTENT"øA quÈ gÈnero pertenece tu personaje?", "Masculino", "Femenino");
+	    Dialog_Show(playerid, Gender, DIALOG_STYLE_MSGBOX, ""COL_TITLE"Configuraci√≥n (1/3)", ""COL_CONTENT"¬øA qu√© g√©nero pertenece tu personaje?", "Masculino", "Femenino");
 	}
 	
 	return true;
@@ -2217,7 +2217,7 @@ public DialogRegister(playerid)
 		DynamicTimer[playerid][TIMER_DIALOG_REGISTER] = -1;
 	}
 
-	Dialog_Show(playerid, Gender, DIALOG_STYLE_MSGBOX, ""COL_TITLE"ConfiguraciÛn (1/3)", ""COL_CONTENT"øA quÈ gÈnero pertenece tu personaje?", "Masculino", "Femenino");
+	Dialog_Show(playerid, Gender, DIALOG_STYLE_MSGBOX, ""COL_TITLE"Configuraci√≥n (1/3)", ""COL_CONTENT"¬øA qu√© g√©nero pertenece tu personaje?", "Masculino", "Femenino");
 	return true;
 }
 
@@ -2254,15 +2254,15 @@ public OnEmailCheck(extraid, email[])
 	if (rows)
 	{
 	    Dialog_Show(extraid, ConfirmEmail, DIALOG_STYLE_INPUT,
-			""COL_TITLE"Oops. RegÌstrate (2/4)", ""COL_CONTENT"La direcciÛn \""COL_TOMATO"%s"COL_CONTENT"\" ya est· siendo usada por otra cuenta.\n\n\
-			"COL_CONTENT_TWO"La direcciÛn debe ser "COL_TOMATO"nombre@dominio.tipo"COL_CONTENT_TWO". IntÈntalo nuevamente"COL_CONTENT"...", "Siguiente", "", email);
+			""COL_TITLE"Oops. Reg√≠strate (2/4)", ""COL_CONTENT"La direcci√≥n \""COL_TOMATO"%s"COL_CONTENT"\" ya est√° siendo usada por otra cuenta.\n\n\
+			"COL_CONTENT_TWO"La direcci√≥n debe ser "COL_TOMATO"nombre@dominio.tipo"COL_CONTENT_TWO". Int√©ntalo nuevamente"COL_CONTENT"...", "Siguiente", "", email);
 	}
 	else
 	{
-		format(content, sizeof(content), ""COL_CONTENT"øEs \""COL_TOMATO"%s"COL_CONTENT"\" la direcciÛn que estar· asociada con tu cuenta?", email);
-		format(title, sizeof(title), ""COL_TITLE"RegÌstrate (2/4)", PlayerName(extraid));
+		format(content, sizeof(content), ""COL_CONTENT"¬øEs \""COL_TOMATO"%s"COL_CONTENT"\" la direcci√≥n que estar√° asociada con tu cuenta?", email);
+		format(title, sizeof(title), ""COL_TITLE"Reg√≠strate (2/4)", PlayerName(extraid));
 
-  		Dialog_Show(extraid, ConfirmEmail, DIALOG_STYLE_MSGBOX, title, content, "SÌ", "No");
+  		Dialog_Show(extraid, ConfirmEmail, DIALOG_STYLE_MSGBOX, title, content, "S√≠", "No");
 
 		format(query, sizeof(query), "UPDATE `accounts` SET `EMAIL` = '%s' WHERE `NAME` = '%s'", email, PlayerName(extraid));
 		mysql_tquery(SQL_CONNECTION, query);
@@ -2278,7 +2278,7 @@ public OnQueryError(errorid, error[], callback[], query[], connectionHandle)
 	{
 	    case 2003:
 		{
-			print("\n\t*** No se puede establecer conexiÛn con la base de datos.\n");
+			print("\n\t*** No se puede establecer conexi√≥n con la base de datos.\n");
 		}
  	}
 
@@ -2334,14 +2334,14 @@ public OnQueryFinished(extraid, threadid)
 			}
 			else
 			{
-				/* Chequear nombre inv·lido ac· */
+				/* Chequear nombre inv√°lido ac√° */
 
 			    new
 					content[256],
 					title[64];
 
 			    format(content, sizeof(content), FORMAT_REGISTER, MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH);
-			    format(title, sizeof(title), ""COL_TITLE"Hola, %s. RegÌstrate (1/4)", PlayerName(extraid));
+			    format(title, sizeof(title), ""COL_TITLE"Hola, %s. Reg√≠strate (1/4)", PlayerName(extraid));
 
     			Dialog_Show(extraid, RegisterScreen, DIALOG_STYLE_INPUT, title, content, "Registrar", "");
 			}
@@ -2376,7 +2376,7 @@ public OnQueryFinished(extraid, threadid)
     	    {
 				if (++LoginAttempts[extraid] == MAX_LOGIN_ATTEMPTS)
     	        {
-    	            SendWarningMessage(extraid, "Fuiste expulsado por introducir errÛneamente "COL_WHITE"%d veces"COL_TOMATO" la contraseÒa.", MAX_LOGIN_ATTEMPTS);
+    	            SendWarningMessage(extraid, "Fuiste expulsado por introducir err√≥neamente "COL_WHITE"%d veces"COL_TOMATO" la contrase√±a.", MAX_LOGIN_ATTEMPTS);
     	            
 					Log_Write("logs/kicks.txt", "<%s> %s fue expulsado por introducir incorrectamente la clave. IP: %s.",
 						ReturnDate(),
@@ -2521,7 +2521,7 @@ public OnQueryFinished(extraid, threadid)
 	                case 10: if (PlayerData[extraid][GENDER] == 1) levels = "El desarrollador"; else levels = "La desarrolladora";
 	            }
 
-   				SendAdminAlert(COLOR_ADMIN_TWO, "(( %s \"%s\" (%d) se conectÛ [%s administrando] ))",
+   				SendAdminAlert(COLOR_ADMIN_TWO, "(( %s \"%s\" (%d) se conect√≥ [%s administrando] ))",
 			   		levels,
 				   	PlayerName(extraid),
 				   	extraid,
@@ -2580,7 +2580,7 @@ Create_Draws(playerid)
 	PlayerTextDrawSetProportional(playerid, PlayerData[playerid][TEXT_DRAW][3], 0);
 	PlayerTextDrawSetSelectable(playerid, PlayerData[playerid][TEXT_DRAW][3], 0);
 			
-	PlayerData[playerid][TEXT_DRAW][4] = CreatePlayerTextDraw(playerid, 320.000000, 385.000000, "_"); // Mensajes de informaciÛn: ShowPlayerInfo
+	PlayerData[playerid][TEXT_DRAW][4] = CreatePlayerTextDraw(playerid, 320.000000, 385.000000, "_"); // Mensajes de informaci√≥n: ShowPlayerInfo
 	PlayerTextDrawAlignment(playerid, PlayerData[playerid][TEXT_DRAW][4], 2);
 	PlayerTextDrawBackgroundColor(playerid, PlayerData[playerid][TEXT_DRAW][4], 16);
 	PlayerTextDrawFont(playerid, PlayerData[playerid][TEXT_DRAW][4], 1);
@@ -2618,8 +2618,8 @@ Create_Draws(playerid)
 	PlayerTextDrawTextSize(playerid, PlayerData[playerid][TEXT_DRAW][6], 0.000000, 100.000000);
 	PlayerTextDrawSetSelectable(playerid, PlayerData[playerid][TEXT_DRAW][6], 0);
 
-	/* VelocÌmetro */
-	TEXT_DRAW_ALL[playerid][0] = CreatePlayerTextDraw(playerid, 427.000000, 394.000000, "ld_pool:ball"); // CÌrculo #1
+	/* Veloc√≠metro */
+	TEXT_DRAW_ALL[playerid][0] = CreatePlayerTextDraw(playerid, 427.000000, 394.000000, "ld_pool:ball"); // C√≠rculo #1
 	PlayerTextDrawBackgroundColor(playerid, TEXT_DRAW_ALL[playerid][0], COLOR_TRANSPARENCE);
 	PlayerTextDrawFont(playerid, TEXT_DRAW_ALL[playerid][0], 4);
 	PlayerTextDrawLetterSize(playerid, TEXT_DRAW_ALL[playerid][0], 0.500000, 1.000000);
@@ -2631,7 +2631,7 @@ Create_Draws(playerid)
 	PlayerTextDrawBoxColor(playerid, TEXT_DRAW_ALL[playerid][0], 255);
 	PlayerTextDrawTextSize(playerid, TEXT_DRAW_ALL[playerid][0], 71.000000, 70.000000);
 
-	TEXT_DRAW_ALL[playerid][1] = CreatePlayerTextDraw(playerid, 477.000000, 358.000000, "ld_pool:ball"); // CÌrculo #2
+	TEXT_DRAW_ALL[playerid][1] = CreatePlayerTextDraw(playerid, 477.000000, 358.000000, "ld_pool:ball"); // C√≠rculo #2
 	PlayerTextDrawBackgroundColor(playerid, TEXT_DRAW_ALL[playerid][1], COLOR_TRANSPARENCE);
 	PlayerTextDrawFont(playerid, TEXT_DRAW_ALL[playerid][1], 4);
 	PlayerTextDrawLetterSize(playerid, TEXT_DRAW_ALL[playerid][1], 0.500000, 1.000000);
@@ -2643,7 +2643,7 @@ Create_Draws(playerid)
 	PlayerTextDrawBoxColor(playerid, TEXT_DRAW_ALL[playerid][1], 255);
 	PlayerTextDrawTextSize(playerid, TEXT_DRAW_ALL[playerid][1], 168.000000, 169.000000);
 
-    for (new i = 0, speedo; i <= 220 && speedo <= 12; i += 20) // N˙meros #1
+    for (new i = 0, speedo; i <= 220 && speedo <= 12; i += 20) // N√∫meros #1
     {
         new
 			Float:coordinates[2],
@@ -2670,7 +2670,7 @@ Create_Draws(playerid)
         speedo ++;
     }
 
-    for (new i = 0, speedo; i <= 100 && speedo < 5; i += 25) // N˙meros #2
+    for (new i = 0, speedo; i <= 100 && speedo < 5; i += 25) // N√∫meros #2
     {
         new
 			Float:coordinates[2],
@@ -2739,7 +2739,7 @@ Create_Draws(playerid)
 	PlayerTextDrawSetProportional(playerid, PlayerData[playerid][TEXT_DRAW][10], 1);
 	PlayerTextDrawSetSelectable(playerid, PlayerData[playerid][TEXT_DRAW][10], 0);
 
-	/* Fin del velocÌmetro */
+	/* Fin del veloc√≠metro */
 }
 
 public OnPlayerConnect(playerid)
@@ -2763,7 +2763,7 @@ public OnPlayerUpdate(playerid)
 {
 	if (SQL_IsLogged(playerid))
 	{
-	    /* Anticheat¥s */
+	    /* Anticheat¬¥s */
  		if (GetPlayerSpecialAction(playerid) == SPECIAL_ACTION_USEJETPACK && !PlayerData[playerid][JET_PACK])
 		{
 	    	SendAdminAlert(COLOR_ADMIN, "\"%s\" fue expulsado por hacer aparecer un jetpack con cheats.", PlayerName(playerid));
@@ -2772,7 +2772,7 @@ public OnPlayerUpdate(playerid)
 	    	Kick(playerid);
 		}
 		
- 	   	/* Bicicleta y vehÌculo daÒado */
+ 	   	/* Bicicleta y veh√≠culo da√±ado */
    		if (IsPlayerInAnyVehicle(playerid) && (GetVehicleModel(GetPlayerVehicleID(playerid)) == 481
 			|| GetVehicleModel(GetPlayerVehicleID(playerid)) == 509 || GetVehicleModel(GetPlayerVehicleID(playerid)) == 510))
 		{
@@ -2819,7 +2819,7 @@ public OnPlayerUpdate(playerid)
    			}
 		}
 		
-		/* VelocÌmetro */
+		/* Veloc√≠metro */
    		if (IsPlayerConnected(playerid) && IsPlayerInAnyVehicle(playerid))
 	 	{
 	 	    if (SpeedoShowing[playerid] == 1)
@@ -2829,8 +2829,8 @@ public OnPlayerUpdate(playerid)
 
  				speed = GetVehicleSpeedToSpeedo(playerid);
 
-				Needle0(playerid, true, "_", speed), // Aguja velocÌmetro
-				NeedleGas(playerid, true, "_", CoreVehicles[GetPlayerVehicleID(playerid)][vehFuel]); // Aguja gasolÌmetro
+				Needle0(playerid, true, "_", speed), // Aguja veloc√≠metro
+				NeedleGas(playerid, true, "_", CoreVehicles[GetPlayerVehicleID(playerid)][vehFuel]); // Aguja gasol√≠metro
 
 				Update_Speedometer(playerid); // Texto
 			}
@@ -3059,7 +3059,7 @@ public OnPlayerRequestClass(playerid, classid)
 	}
  	else
 	{
-		SendSampMessage(playerid, "Debes tener la versiÛn "COL_WHITE"%s"COL_DEFAULT" para jugar. Desc·rgala en "COL_WHITE"sa-mp.com"COL_DEFAULT" e ingresa nuevamente.", SAMP_VERSION);
+		SendSampMessage(playerid, "Debes tener la versi√≥n "COL_WHITE"%s"COL_DEFAULT" para jugar. Desc√°rgala en "COL_WHITE"sa-mp.com"COL_DEFAULT" e ingresa nuevamente.", SAMP_VERSION);
 	}
  	return true;
 }
@@ -3103,7 +3103,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			new viewip[16];
 			GetPlayerIp(playerid, viewip, sizeof viewip);
 
-			SendAdminAlert(COLOR_ADMIN, "Es la primera vez de \"%s\" [%s] en el servidor (ø/espiar %d?).", PlayerName(playerid), viewip, playerid);
+			SendAdminAlert(COLOR_ADMIN, "Es la primera vez de \"%s\" [%s] en el servidor (¬ø/espiar %d?).", PlayerName(playerid), viewip, playerid);
 			
 			TogglePlayerSpectating(playerid, false);
 			
@@ -3116,9 +3116,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
         }
         else
 		{
-		  	Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"ConfiguraciÛn (2/3)",
+		  	Dialog_Show(playerid, DateBirth, DIALOG_STYLE_INPUT, ""COL_TITLE"Configuraci√≥n (2/3)",
 				""COL_CONTENT"Escoge una fecha de nacimiento para tu personaje.\n\n\
-				"COL_CONTENT_TWO"Debes usar el formato "COL_TOMATO"20/09/2000"COL_CONTENT".", "Siguiente", "Atr·s");
+				"COL_CONTENT_TWO"Debes usar el formato "COL_TOMATO"20/09/2000"COL_CONTENT".", "Siguiente", "Atr√°s");
 		}
     }
     return true;
@@ -3128,7 +3128,7 @@ public OnPlayerText(playerid, text[])
 {
 	if (!PlayerData[playerid][LOGGED])
 	{
-		SendErrorMessage(playerid, "TodavÌa no ingresaste. No puedes hablar.");
+		SendErrorMessage(playerid, "Todav√≠a no ingresaste. No puedes hablar.");
 		return false;
 	}
 	else
@@ -3199,8 +3199,8 @@ cmd:ayuda(playerid, params[])
 {
 	if (sscanf(params, "s[32]", params) || !strcmp(params, "42", true))
 	{
-		SendSyntaxMessage(playerid, "/ayuda [general, chat, trabajo, facciÛn, vehÌculo, casa, negocio y otro]"COL_GREY".");
-	 	SendInfoMessage(playerid, "Para m·s ayuda Èchale un vistazo a "COL_WHITE"%s"COL_CYAN". TambiÈn puedes usar /duda.", SERVER_WEB);
+		SendSyntaxMessage(playerid, "/ayuda [general, chat, trabajo, facci√≥n, veh√≠culo, casa, negocio y otro]"COL_GREY".");
+	 	SendInfoMessage(playerid, "Para m√°s ayuda √©chale un vistazo a "COL_WHITE"%s"COL_CYAN". Tambi√©n puedes usar /duda.", SERVER_WEB);
 	}
 	else if (!strcmp(params, "general", true))
 	{
@@ -3214,11 +3214,11 @@ cmd:ayuda(playerid, params[])
  	{
 
 	}
-	else if (!strcmp(params, "facciÛn", true) || !strcmp(params, "faccion", true))
+	else if (!strcmp(params, "facci√≥n", true) || !strcmp(params, "faccion", true))
  	{
 
 	}
-	else if (!strcmp(params, "vehÌculo", true) || !strcmp(params, "vehiculo", true))
+	else if (!strcmp(params, "veh√≠culo", true) || !strcmp(params, "vehiculo", true))
  	{
 
 	}
@@ -3234,7 +3234,7 @@ cmd:ayuda(playerid, params[])
  	{
 
 	}
-	else SendSyntaxMessage(playerid, "/ayuda [general, chat, trabajo, facciÛn, vehÌculo, casa, negocio y otro]"COL_GREY".");
+	else SendSyntaxMessage(playerid, "/ayuda [general, chat, trabajo, facci√≥n, veh√≠culo, casa, negocio y otro]"COL_GREY".");
 	return true;
 }
 
@@ -3245,19 +3245,19 @@ cmd:motor(playerid, params[])
 	    id = Car_GetID(vehicleid);
 
 	if (!IsPlayerInAnyVehicle(playerid))
-		return SendErrorMessage(playerid, "Tienes que estar dentro de un vehÌculo para usar este comando.");
+		return SendErrorMessage(playerid, "Tienes que estar dentro de un veh√≠culo para usar este comando.");
 
 	if (!IsEngineVehicle(vehicleid))
-		return SendErrorMessage(playerid, "No est·s dentro de ning˙n vehÌculo con motor.");
+		return SendErrorMessage(playerid, "No est√°s dentro de ning√∫n veh√≠culo con motor.");
 
 	if (GetPlayerState(playerid) != PLAYER_STATE_DRIVER)
 	    return SendErrorMessage(playerid, "No eres el conductor.");
 
 	if (CarData[id][carCEPO] != 0)
-	    return SendErrorMessage(playerid, "Este vehÌculo tiene un cepo policial.");
+	    return SendErrorMessage(playerid, "Este veh√≠culo tiene un cepo policial.");
 
 	if (CarData[id][carSALE] != 0)
-	    return SendErrorMessage(playerid, "Este vehÌculo est· en venta. No hay llaves a la vista.");
+	    return SendErrorMessage(playerid, "Este veh√≠culo est√° en venta. No hay llaves a la vista.");
 	
 	switch (GetEngineStatus(vehicleid))
 	{
@@ -3283,7 +3283,7 @@ cmd:luces(playerid, params[])
 	{
 		case false:
 		{
-			format(message, sizeof(message), "* encendiÛ las luces del vehÌculo. *");
+			format(message, sizeof(message), "* encendi√≥ las luces del veh√≠culo. *");
  			SetPlayerChatBubble(playerid, message, COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
 
 			SetLightStatus(vehicleid, true),
@@ -3301,7 +3301,7 @@ cmd:luces(playerid, params[])
 		}
 		case true:
 		{
-  			format(message, sizeof(message), "* apagÛ las luces del vehÌculo. *");
+  			format(message, sizeof(message), "* apag√≥ las luces del veh√≠culo. *");
  			SetPlayerChatBubble(playerid, message, COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
 
 			SetLightStatus(vehicleid, false),
@@ -3332,9 +3332,9 @@ cmd:dar(playerid, params[])
     else if (params[0] == playerid) SendErrorMessage(playerid, "No puedes usar este comando contigo mismo.");
 	else if (!strcmp(item, "copia", true))
 	{
-	    if (!IsPlayerInAnyVehicle(playerid)) return SendErrorMessage(playerid, "No est·s en el vehÌculo que vas a compartir.");
+	    if (!IsPlayerInAnyVehicle(playerid)) return SendErrorMessage(playerid, "No est√°s en el veh√≠culo que vas a compartir.");
 	    else if (GetPlayerState(playerid) != PLAYER_STATE_DRIVER) return SendErrorMessage(playerid, "Debes estar sentado en el asiento del conductor.");
-		else if (CarData[id][carIMPOUNDED] != -1) return SendErrorMessage(playerid, "El vehÌculo est· embargado, no puedes usarlo.");
+		else if (CarData[id][carIMPOUNDED] != -1) return SendErrorMessage(playerid, "El veh√≠culo est√° embargado, no puedes usarlo.");
 		else
 		{
 			if ((id = Car_Inside(playerid)) != -1 && Car_IsOwner(playerid, id))
@@ -3345,7 +3345,7 @@ cmd:dar(playerid, params[])
 	   			CarData[id][carTAKEN] = PlayerData[params[0]][SQL_ID];
 	   			format(CarData[id][carTAKEN_NAME], 24, "%s", PlayerName(params[0]));
 			}
-			else SendErrorMessage(playerid, "No eres dueÒo de Èste vehÌculo.");
+			else SendErrorMessage(playerid, "No eres due√±o de √©ste veh√≠culo.");
 		}
 	}
 	return true;
@@ -3366,11 +3366,11 @@ cmd:peaje(playerid, params[])
 	}
 
 	if (id == -1) return true;
-    else if (TollData[id][tollOpenTime] > 0) return SendErrorMessage(playerid, "La barrera todavÌa est· abierta. Se cerrar· en %d segundos.", TollData[id][tollOpenTime]);
+    else if (TollData[id][tollOpenTime] > 0) return SendErrorMessage(playerid, "La barrera todav√≠a est√° abierta. Se cerrar√° en %d segundos.", TollData[id][tollOpenTime]);
 	else if (TollData[id][tollLocked]) return SendErrorMessage(playerid, "Este peaje fue cerrado. Fue una orden del departamento policial.");
 	else if (GetPlayerMoney(playerid) < TOLL_COST) return SendErrorMessage(playerid, "Debes tener %s para pagar el peaje.", FormatNumber(TOLL_COST));
 
-	SetPlayerChatBubble(playerid, "* pagÛ el peaje *", COLOR_PURPLE, TAG_DISTANCE, SECONDS(3)),
+	SetPlayerChatBubble(playerid, "* pag√≥ el peaje *", COLOR_PURPLE, TAG_DISTANCE, SECONDS(3)),
 	Buy(playerid, TOLL_COST);
 	
 	Toll_OpenToll(id);
@@ -3383,7 +3383,7 @@ cmd:duda(playerid, params[])
 	{
 		return SendErrorMessage(playerid, "Debes esperar %s para preguntar otra vez.", GetDurationEx(PlayerData[playerid][DOUBT_TIME] - gettime()));
 	}
-	else if (AdminOnlineCheck() == 0) return SendErrorMessage(playerid, "No hay administradores conectados. Intenta m·s tarde.");
+	else if (AdminOnlineCheck() == 0) return SendErrorMessage(playerid, "No hay administradores conectados. Intenta m√°s tarde.");
 	else if (Doubt_GetCount(playerid) == 1) return SendErrorMessage(playerid, "Ya hiciste una pregunta. Espera a que te la respondan.");
 	
 	static
@@ -3412,7 +3412,7 @@ cmd:duda(playerid, params[])
 		}
 
 		new message[128];
-        format(message, sizeof(message), "Tu pregunta est· en la posiciÛn #%d. Espera a que sea respondida.", doubtid + 1);
+        format(message, sizeof(message), "Tu pregunta est√° en la posici√≥n #%d. Espera a que sea respondida.", doubtid + 1);
         ShowPlayerSuggestion(playerid, message, SECONDS(10));
 
 	    foreach (new i : Player)
@@ -3421,21 +3421,21 @@ cmd:duda(playerid, params[])
 			{
 				if (strlen(params) > 60)
 				{
-  					SendClientMessageEx(i, COLOR_DOUBTS, "(( {838282}[/ad %d Û /rd %d]"COL_DOUBTS" %s (%d) pregunta: \"%.60s ...", doubtid, doubtid, PlayerName(playerid), playerid, params);
+  					SendClientMessageEx(i, COLOR_DOUBTS, "(( {838282}[/ad %d √≥ /rd %d]"COL_DOUBTS" %s (%d) pregunta: \"%.60s ...", doubtid, doubtid, PlayerName(playerid), playerid, params);
 	    			SendClientMessageEx(i, COLOR_DOUBTS, "... %s\". ))", params[60]);
 				}
 				else
 				{
-  					SendClientMessageEx(i, COLOR_DOUBTS, "(( {838282}[/ad %d Û /rd %d]"COL_DOUBTS" %s (%d) pregunta: \"%s\". ))", doubtid, doubtid, PlayerName(playerid), playerid, params);
+  					SendClientMessageEx(i, COLOR_DOUBTS, "(( {838282}[/ad %d √≥ /rd %d]"COL_DOUBTS" %s (%d) pregunta: \"%s\". ))", doubtid, doubtid, PlayerName(playerid), playerid, params);
 				}
 				
-			 	ShowPlayerBox(playerid, "Una nueva pregunta se sumÛ a la lista de /dudas pendientes.", SECONDS(10), 1);
+			 	ShowPlayerBox(playerid, "Una nueva pregunta se sum√≥ a la lista de /dudas pendientes.", SECONDS(10), 1);
 			}
 		}
 
 		PlayerData[playerid][DOUBT_TIME] = gettime() + 15;
 	}
-	else SendErrorMessage(playerid, "La lista de dudas est· llena, espera.");
+	else SendErrorMessage(playerid, "La lista de dudas est√° llena, espera.");
 	return true;
 }
 
@@ -3445,13 +3445,13 @@ cmd:reportar(playerid, params[])
 	{
 		return SendErrorMessage(playerid, "Debes esperar %d para reportar otra vez.", GetDurationEx(PlayerData[playerid][REPORT_TIME] - gettime()));
 	}
-	else if (AdminOnlineCheck() == 0) return SendErrorMessage(playerid, "No hay administradores conectados. Intenta m·s tarde.");
+	else if (AdminOnlineCheck() == 0) return SendErrorMessage(playerid, "No hay administradores conectados. Intenta m√°s tarde.");
 	else if (Report_GetCount(playerid) == 1) return SendErrorMessage(playerid, "Ya tienes un reporte pendiente. Espera a que te lo respondan.");
 	
 	static
 		reportid = -1;
 
-	if (isnull(params)) return SendSyntaxMessage(playerid, "/reportar [texto] (expl·yate)"COL_GREY".");
+	if (isnull(params)) return SendSyntaxMessage(playerid, "/reportar [texto] (expl√°yate)"COL_GREY".");
 	else if ((reportid = Report_Add(playerid, params)) != -1)
 	{
 	    ConvertText(params, 2);
@@ -3476,7 +3476,7 @@ cmd:reportar(playerid, params[])
 		}
 
 		new message[128];
-        format(message, sizeof(message), "Tu reporte est· en la posiciÛn #%d. Espera a que sea atendido.", reportid + 1);
+        format(message, sizeof(message), "Tu reporte est√° en la posici√≥n #%d. Espera a que sea atendido.", reportid + 1);
         ShowPlayerSuggestion(playerid, message, SECONDS(10));
 
 	    foreach (new i : Player)
@@ -3485,21 +3485,21 @@ cmd:reportar(playerid, params[])
 			{
 				if (strlen(params) > 60)
 				{
-  					SendClientMessageEx(i, COLOR_REPORTS, "(( {838282}[/ar %d Û /rr %d]"COL_REPORTS" %s (%d) reporta: \"%.60s ...", reportid, reportid, PlayerName(playerid), playerid, params);
+  					SendClientMessageEx(i, COLOR_REPORTS, "(( {838282}[/ar %d √≥ /rr %d]"COL_REPORTS" %s (%d) reporta: \"%.60s ...", reportid, reportid, PlayerName(playerid), playerid, params);
 	    			SendClientMessageEx(i, COLOR_REPORTS, "... %s\". ))", params[60]);
 				}
 				else
 				{
-  					SendClientMessageEx(i, COLOR_REPORTS, "(( {838282}[/ar %d Û /rr %d]"COL_REPORTS" %s (%d) reporta: \"%s\". ))", reportid, reportid, PlayerName(playerid), playerid, params);
+  					SendClientMessageEx(i, COLOR_REPORTS, "(( {838282}[/ar %d √≥ /rr %d]"COL_REPORTS" %s (%d) reporta: \"%s\". ))", reportid, reportid, PlayerName(playerid), playerid, params);
 				}
 			}
 			
-	 		ShowPlayerBox(playerid, "Un nuevo reporte se sumÛ a la lista de /reportes pendientes.", SECONDS(10), 2);
+	 		ShowPlayerBox(playerid, "Un nuevo reporte se sum√≥ a la lista de /reportes pendientes.", SECONDS(10), 2);
 		}
 		
 		PlayerData[playerid][REPORT_TIME] = gettime() + 15;
 	}
-	else SendErrorMessage(playerid, "La lista de reportes est· llena, espera.");
+	else SendErrorMessage(playerid, "La lista de reportes est√° llena, espera.");
 	return true;
 }
 
@@ -3532,7 +3532,7 @@ cmd:hora(playerid, params[])
 	format(string, sizeof(string), "~y~%s %02d %d~n~~w~%02d:%02d:%02d", month, date[0], date[2], date[3], date[4], date[5]);
 	GameTextForPlayer(playerid, string, SECONDS(5), 1);
 	
-  	SetPlayerChatBubble(playerid, "* observÛ la hora en su reloj *", COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
+  	SetPlayerChatBubble(playerid, "* observ√≥ la hora en su reloj *", COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
     ApplyAnimation(playerid, "COP_AMBIENT", "Coplook_watch", 4.1, 0, 0, 0, 0, 0);
 	return true;
 }
@@ -3543,7 +3543,7 @@ cmd:intentar(playerid, params[])
 		return SendErrorMessage(playerid, "Debes esperar %s para intentar otra vez.", GetDurationEx(PlayerData[playerid][TRY_TIME] - gettime()));
 
 	if (isnull(params))
-	    return SendSyntaxMessage(playerid, "/intentar [acciÛn]"COL_GREY".");
+	    return SendSyntaxMessage(playerid, "/intentar [acci√≥n]"COL_GREY".");
 	
 	new
 		rand = random(2);
@@ -3552,24 +3552,24 @@ cmd:intentar(playerid, params[])
 	{
 		if (strlen(params) > 60)
 		{
-		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "* °%s intenta %.60s ...", PlayerName(playerid), params);
+		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "* ¬°%s intenta %.60s ...", PlayerName(playerid), params);
 		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "... %s y consigue hacerlo!", params[60]);
 		}
 		else
 		{
-		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "* °%s intenta %s y consigue hacerlo!", PlayerName(playerid), params);
+		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "* ¬°%s intenta %s y consigue hacerlo!", PlayerName(playerid), params);
 		}
 	}
 	else if (rand == 1)
 	{
 		if (strlen(params) > 60)
 		{
-		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "%s intentÛ %.60s ...", PlayerName(playerid), params);
-		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "... %s pero no consiguiÛ hacerlo.", params[60]);
+		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "%s intent√≥ %.60s ...", PlayerName(playerid), params);
+		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "... %s pero no consigui√≥ hacerlo.", params[60]);
 		}
 		else
 		{
-		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "%s intentÛ %s pero no consiguiÛ hacerlo.", PlayerName(playerid), params);
+		    SendNearbyMessage(playerid, 30.0, COLOR_GREEN_TWO, "%s intent√≥ %s pero no consigui√≥ hacerlo.", PlayerName(playerid), params);
 		}
 	}
 	
@@ -3580,7 +3580,7 @@ cmd:intentar(playerid, params[])
 cmd:me(playerid, params[])
 {
 	if (isnull(params))
-	    return SendSyntaxMessage(playerid, "/me [acciÛn]"COL_GREY".");
+	    return SendSyntaxMessage(playerid, "/me [acci√≥n]"COL_GREY".");
 
 	if (strlen(params) > 60)
 	{
@@ -3641,12 +3641,12 @@ cmd:g(playerid, params[])
 
 	if (strlen(params) > 60)
 	{
-	    SendNearbyMessage(playerid, 35.0, 0xEFEFEF99, "%s grita: °%.60s ...", PlayerName(playerid), params);
+	    SendNearbyMessage(playerid, 35.0, 0xEFEFEF99, "%s grita: ¬°%.60s ...", PlayerName(playerid), params);
 	    SendNearbyMessage(playerid, 35.0, 0xEFEFEF99, "... %s!", params[60]);
 	}
 	else
 	{
-	    SendNearbyMessage(playerid, 35.0, 0xEFEFEF99, "%s grita: °%s!", PlayerName(playerid), params);
+	    SendNearbyMessage(playerid, 35.0, 0xEFEFEF99, "%s grita: ¬°%s!", PlayerName(playerid), params);
 	}
 	return true;
 }
@@ -3704,7 +3704,7 @@ cmd:staff(playerid, params[])
 		}
 	}
 
-	if (count != 0) Dialog_Show(playerid, ShowOnly, DIALOG_STYLE_TABLIST_HEADERS, title, dialog, "ó", "");
+	if (count != 0) Dialog_Show(playerid, ShowOnly, DIALOG_STYLE_TABLIST_HEADERS, title, dialog, "‚Äî", "");
 	else SendErrorMessage(playerid, "No hay administradores conectados.");
 	
 	return true;
@@ -3729,18 +3729,18 @@ cmd:dudas(playerid, params[])
 
 		if (strlen(text) > 60)
 		{
-		    SendClientMessageEx(playerid, COLOR_DOUBTS, "ó [/ad %d Û /rd %d] %s (%d) pregunta: \"%.60s", i, i, PlayerName(DoubtData[i][dPlayer]), DoubtData[i][dPlayer], text);
+		    SendClientMessageEx(playerid, COLOR_DOUBTS, "‚Äî [/ad %d √≥ /rd %d] %s (%d) pregunta: \"%.60s", i, i, PlayerName(DoubtData[i][dPlayer]), DoubtData[i][dPlayer], text);
 			SendClientMessageEx(playerid, COLOR_DOUBTS, "... %s\".", text[60]);
 		}
 		else
 		{
-  			SendClientMessageEx(playerid, COLOR_DOUBTS, "ó [/ad %d Û /rd %d] %s (%d) pregunta: \"%s\".", i, i, PlayerName(DoubtData[i][dPlayer]), DoubtData[i][dPlayer], text);
+  			SendClientMessageEx(playerid, COLOR_DOUBTS, "‚Äî [/ad %d √≥ /rd %d] %s (%d) pregunta: \"%s\".", i, i, PlayerName(DoubtData[i][dPlayer]), DoubtData[i][dPlayer], text);
 		}
 
 		count++;
 	}
 
-	if (!count) return SendErrorMessage(playerid, "No hay dudas pendientes. °Estamos al dÌa!");
+	if (!count) return SendErrorMessage(playerid, "No hay dudas pendientes. ¬°Estamos al d√≠a!");
 	return true;
 }
 
@@ -3762,18 +3762,18 @@ cmd:reportes(playerid, params[])
 
   		if (strlen(text) > 60)
 		{
-		    SendClientMessageEx(playerid, COLOR_REPORTS, "ó [/ar %d Û /rr %d] %s (%d) reporta: \"%.60s", i, i, PlayerName(ReportData[i][rPlayer]), ReportData[i][rPlayer], text);
+		    SendClientMessageEx(playerid, COLOR_REPORTS, "‚Äî [/ar %d √≥ /rr %d] %s (%d) reporta: \"%.60s", i, i, PlayerName(ReportData[i][rPlayer]), ReportData[i][rPlayer], text);
 			SendClientMessageEx(playerid, COLOR_REPORTS, "... %s\".", text[60]);
 		}
 		else
 		{
-  			SendClientMessageEx(playerid, COLOR_REPORTS, "ó [/ar %d Û /rr %d] %s (%d) reporta: \"%s\".", i, i, PlayerName(ReportData[i][rPlayer]), ReportData[i][rPlayer], text);
+  			SendClientMessageEx(playerid, COLOR_REPORTS, "‚Äî [/ar %d √≥ /rr %d] %s (%d) reporta: \"%s\".", i, i, PlayerName(ReportData[i][rPlayer]), ReportData[i][rPlayer], text);
 		}
 
 		count++;
 	}
 
-	if (!count) return SendErrorMessage(playerid, "No hay reportes pendientes. °Estamos al dÌa!");
+	if (!count) return SendErrorMessage(playerid, "No hay reportes pendientes. ¬°Estamos al d√≠a!");
 	return true;
 }
 
@@ -3792,8 +3792,8 @@ cmd:areporte(playerid, params[])
 	if ((reportid < 0 || reportid >= MAX_REPORTS) || !ReportData[reportid][rExists])
 	    return SendErrorMessage(playerid, "Desde el 0 hasta el %d.", MAX_REPORTS);
 
-	SendInfoMessage(ReportData[reportid][rPlayer], "\"%s\" est· revisando tu reporte.", PlayerName(playerid));
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" est· revisando el reporte de \"%s\".", PlayerName(playerid), PlayerName(ReportData[reportid][rPlayer]));
+	SendInfoMessage(ReportData[reportid][rPlayer], "\"%s\" est√° revisando tu reporte.", PlayerName(playerid));
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" est√° revisando el reporte de \"%s\".", PlayerName(playerid), PlayerName(ReportData[reportid][rPlayer]));
 
 	Report_Remove(reportid);
 	return true;
@@ -3814,8 +3814,8 @@ cmd:rreporte(playerid, params[])
 	if ((reportid < 0 || reportid >= MAX_REPORTS) || !ReportData[reportid][rExists])
 	    return SendErrorMessage(playerid, "Desde el 0 hasta el %d.", MAX_REPORTS);
 
-	SendInfoMessage(ReportData[reportid][rPlayer], "\"%s\" marcÛ tu reporte como inv·lido.", PlayerName(playerid));
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" marcÛ el reporte de \"%s\" como inv·lido.", PlayerName(playerid), PlayerName(ReportData[reportid][rPlayer]));
+	SendInfoMessage(ReportData[reportid][rPlayer], "\"%s\" marc√≥ tu reporte como inv√°lido.", PlayerName(playerid));
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" marc√≥ el reporte de \"%s\" como inv√°lido.", PlayerName(playerid), PlayerName(ReportData[reportid][rPlayer]));
 
     Report_Remove(reportid);
 	return true;
@@ -3836,21 +3836,21 @@ cmd:aduda(playerid, params[])
 	if ((doubtid < 0 || doubtid >= MAX_DOUBTS) || !DoubtData[doubtid][dExists])
 	    return SendErrorMessage(playerid, "Desde el 0 hasta el %d.", MAX_DOUBTS);
 
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" respondiÛ a la duda de \"%s\".", PlayerName(playerid), PlayerName(DoubtData[doubtid][dPlayer]));
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" respondi√≥ a la duda de \"%s\".", PlayerName(playerid), PlayerName(DoubtData[doubtid][dPlayer]));
 
 	if (strlen(reply) > 60)
 	{
  	    SendOwnerAlert(COLOR_ADMIN, "[1339's] La respuesta: \"%.60s ...", reply);
 	    SendOwnerAlert(COLOR_ADMIN, "... %s\".", reply[60]);
 
-	    SendInfoMessage(DoubtData[doubtid][dPlayer], "\"%s\" respondiÛ a tu pregunta: \"%.60s", PlayerName(playerid), reply);
+	    SendInfoMessage(DoubtData[doubtid][dPlayer], "\"%s\" respondi√≥ a tu pregunta: \"%.60s", PlayerName(playerid), reply);
 	    SendInfoMessage(DoubtData[doubtid][dPlayer], "... %s\".", reply[60]);
 	}
 	else
 	{
 	    SendOwnerAlert(COLOR_ADMIN, "[1339's] La respuesta: \"%s\".", reply);
 
-	    SendInfoMessage(DoubtData[doubtid][dPlayer], "\"%s\" respondiÛ a tu pregunta: \"%s\".", PlayerName(playerid), reply);
+	    SendInfoMessage(DoubtData[doubtid][dPlayer], "\"%s\" respondi√≥ a tu pregunta: \"%s\".", PlayerName(playerid), reply);
 	}
 
 	Doubt_Remove(doubtid);
@@ -3872,8 +3872,8 @@ cmd:rduda(playerid, params[])
 	if ((doubtid < 0 || doubtid >= MAX_DOUBTS) || !DoubtData[doubtid][dExists])
 	    return SendErrorMessage(playerid, "Desde el 0 hasta el %d.", MAX_DOUBTS);
 
-	SendInfoMessage(DoubtData[doubtid][dPlayer], "\"%s\" marcÛ tu pregunta como inv·lida.", PlayerName(playerid));
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" marcÛ la pregunta de \"%s\" como inv·lida.", PlayerName(playerid), PlayerName(DoubtData[doubtid][dPlayer]));
+	SendInfoMessage(DoubtData[doubtid][dPlayer], "\"%s\" marc√≥ tu pregunta como inv√°lida.", PlayerName(playerid));
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" marc√≥ la pregunta de \"%s\" como inv√°lida.", PlayerName(playerid), PlayerName(DoubtData[doubtid][dPlayer]));
 
     Doubt_Remove(doubtid);
 	return true;
@@ -3890,16 +3890,16 @@ cmd:darcar(playerid, params[])
 	    return INVALID;
 
 	if (GetPlayerInterior(playerid) > 0 || GetPlayerVirtualWorld(playerid) > 0)
- 		return SendErrorMessage(playerid, "No puedes crear vehÌculos en interiores o mundos.");
+ 		return SendErrorMessage(playerid, "No puedes crear veh√≠culos en interiores o mundos.");
 
 	if (sscanf(params, "us[32]", userid, model))
 	    return SendSyntaxMessage(playerid, "/darcar [id/nombre] [modelo/nombre]"COL_GREY".");
 
 	if (Car_GetCount(userid) >= MAX_OWNABLE_CARS)
-		return SendErrorMessage(playerid, "Ese jugador alcanzÛ el m·ximo de vehÌculos.");
+		return SendErrorMessage(playerid, "Ese jugador alcanz√≥ el m√°ximo de veh√≠culos.");
 
     if ((model[0] = GetVehicleModelByName(model)) == 0)
-	    return SendErrorMessage(playerid, "Modelo inv·lido.");
+	    return SendErrorMessage(playerid, "Modelo inv√°lido.");
 
 	static
 	    Float:x,
@@ -3914,9 +3914,9 @@ cmd:darcar(playerid, params[])
 	id = Car_Create(PlayerData[userid][SQL_ID], model[0], x, y + 2, z + 1, angle, 255, 255, -1);
 
 	if (id == -1)
-	    return SendErrorMessage(playerid, "Se ha llegado al lÌmite de vehÌculos din·micos.");
+	    return SendErrorMessage(playerid, "Se ha llegado al l√≠mite de veh√≠culos din√°micos.");
 
-    SendAdminAlert(COLOR_ADMIN, "\"%s\" creÛ un vehÌculo para \"%s\".", PlayerName(playerid), PlayerName(userid));
+    SendAdminAlert(COLOR_ADMIN, "\"%s\" cre√≥ un veh√≠culo para \"%s\".", PlayerName(playerid), PlayerName(userid));
 	return true;
 }
 
@@ -3938,11 +3938,11 @@ cmd:borrarcar(playerid, params[])
 	}
 	
 	if (!IsValidVehicle(id) || Car_GetID(id) == -1)
-	    return SendErrorMessage(playerid, "El vehÌculo no existe.");
+	    return SendErrorMessage(playerid, "El veh√≠culo no existe.");
 
 	Car_Delete(Car_GetID(id));
 
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" borrÛ el vehÌculo #%d.", PlayerName(playerid), id);
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" borr√≥ el veh√≠culo #%d.", PlayerName(playerid), id);
 	return true;
 }
 
@@ -3956,7 +3956,7 @@ cmd:colorcar(playerid, params[])
 	    return INVALID;
 
 	if (!IsPlayerInAnyVehicle(playerid))
-	    return SendErrorMessage(playerid, "No est·s en un vehÌculo.");
+	    return SendErrorMessage(playerid, "No est√°s en un veh√≠culo.");
 
 	if (sscanf(params, "dd", color1, color2))
 	    return SendSyntaxMessage(playerid, "/colorcar [color 1] [color 2]"COL_GREY".");
@@ -3968,7 +3968,7 @@ cmd:colorcar(playerid, params[])
 	    return SendErrorMessage(playerid, "De 0 hasta 255.");
 
 	SetVehicleColor(GetPlayerVehicleID(playerid), color1, color2);
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" ajustÛ los colores de su vehÌculo (#%d y #%d).", PlayerName(playerid), color1, color2);
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" ajust√≥ los colores de su veh√≠culo (#%d y #%d).", PlayerName(playerid), color1, color2);
 	return true;
 }
 
@@ -3982,16 +3982,16 @@ cmd:enviarcar(playerid, params[])
 	    return INVALID;
 
 	if (sscanf(params, "du", carid, userid))
-	    return SendSyntaxMessage(playerid, "/enviarcar [id del vehÌculo] [id/nombre]"COL_GREY".");
+	    return SendSyntaxMessage(playerid, "/enviarcar [id del veh√≠culo] [id/nombre]"COL_GREY".");
 
     if (IsPlayerNPC(userid))
 	    return true;
 
 	if (carid < 1 || carid > MAX_VEHICLES || !IsValidVehicle(carid))
-		return SendErrorMessage(playerid, "El vehÌculo no existe.");
+		return SendErrorMessage(playerid, "El veh√≠culo no existe.");
 
 	if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
 	new
 		Float:positionX,
@@ -4001,8 +4001,8 @@ cmd:enviarcar(playerid, params[])
 	GetPlayerPos(userid, positionX, positionY, positionZ),
 	SetVehiclePos(carid, positionX, positionY + 4, positionZ);
 
-	SendAdminAlert(COLOR_LIGHTRED, "\"%s\" llevÛ el vehÌculo #%d hasta la posiciÛn de \"%s\".", PlayerName(playerid), carid, PlayerName(userid)),
-    SendAdminAction(userid, "\"%s\" teletransportÛ el vehÌculo #%d hacia ti.", PlayerName(playerid), carid);
+	SendAdminAlert(COLOR_LIGHTRED, "\"%s\" llev√≥ el veh√≠culo #%d hasta la posici√≥n de \"%s\".", PlayerName(playerid), carid, PlayerName(userid)),
+    SendAdminAction(userid, "\"%s\" teletransport√≥ el veh√≠culo #%d hacia ti.", PlayerName(playerid), carid);
 	return true;
 }
 
@@ -4019,12 +4019,12 @@ cmd:entercar(playerid, params[])
 	    return SendSyntaxMessage(playerid, "/entercar [id/nombre]"COL_GREY".");
 
 	if (vehicleid < 1 || vehicleid > MAX_VEHICLES || !IsValidVehicle(vehicleid))
-		return SendErrorMessage(playerid, "El vehÌculo no existe.");
+		return SendErrorMessage(playerid, "El veh√≠culo no existe.");
 
 	seatid = GetAvailableSeat(vehicleid, 0);
 
 	if (seatid == -1)
-	    return SendErrorMessage(playerid, "No quedan asientos libres en ese vehÌculo.");
+	    return SendErrorMessage(playerid, "No quedan asientos libres en ese veh√≠culo.");
 
 	PutPlayerInVehicle(playerid, vehicleid, seatid);
 	return true;
@@ -4043,10 +4043,10 @@ cmd:respawncar(playerid, params[])
 	    return SendSyntaxMessage(playerid, "/respawncar [id/nombre]"COL_GREY".");
 
 	if (vehicleid < 1 || vehicleid > MAX_VEHICLES || !IsValidVehicle(vehicleid))
-		return SendErrorMessage(playerid, "El vehÌculo no existe.");
+		return SendErrorMessage(playerid, "El veh√≠culo no existe.");
 
 	RespawnVehicle(vehicleid),
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" re-posicionÛ el vehÌculo #%d.", PlayerName(playerid), vehicleid);
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" re-posicion√≥ el veh√≠culo #%d.", PlayerName(playerid), vehicleid);
 	return true;
 }
 
@@ -4069,9 +4069,9 @@ cmd:respawncars(playerid, params[])
 	}
 	
 	if (!count)
-	    return SendErrorMessage(playerid, "No hay vehÌculos para posicionar.");
+	    return SendErrorMessage(playerid, "No hay veh√≠culos para posicionar.");
 
-    SendAdminAlert(COLOR_ADMIN, "\"%s\" re-posicionÛ %d vehÌculos.", PlayerName(playerid), count);
+    SendAdminAlert(COLOR_ADMIN, "\"%s\" re-posicion√≥ %d veh√≠culos.", PlayerName(playerid), count);
 	return true;
 }
 
@@ -4099,20 +4099,20 @@ cmd:gascar(playerid, params[])
 
 			CoreVehicles[id][vehFuel] = amount;
 			
-			SendAdminAlert(COLOR_ADMIN, "\"%s\" le dio un %d porciento de gasolina al vehÌculo #%d.", PlayerName(playerid), amount, id);
+			SendAdminAlert(COLOR_ADMIN, "\"%s\" le dio un %d porciento de gasolina al veh√≠culo #%d.", PlayerName(playerid), amount, id);
 			return true;
 		}
 		else return SendSyntaxMessage(playerid, "/gascar [id] [cantidad]"COL_GREY".");
 	}
 	
 	if (!IsValidVehicle(id))
-	    return SendErrorMessage(playerid, "El vehÌculo no existe.");
+	    return SendErrorMessage(playerid, "El veh√≠culo no existe.");
 
 	if (amount < 0)
  		return SendErrorMessage(playerid, "La cantidad no puede ser inferior a 0.");
 
 	CoreVehicles[id][vehFuel] = amount;
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" le dio un %d porciento de gasolina al vehÌculo #%d.", PlayerName(playerid), amount, id);
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" le dio un %d porciento de gasolina al veh√≠culo #%d.", PlayerName(playerid), amount, id);
 	return true;
 }
 
@@ -4128,7 +4128,7 @@ cmd:repararcar(playerid, params[])
 	if (vehicleid > 0 && isnull(params))
 	{
 		RepairVehicle(vehicleid);
-		SendOwnerAlert(COLOR_ADMIN, "[1339's] \"%s\" reparÛ su vehÌculo.", PlayerName(playerid));
+		SendOwnerAlert(COLOR_ADMIN, "[1339's] \"%s\" repar√≥ su veh√≠culo.", PlayerName(playerid));
 	}
 	else
 	{
@@ -4136,10 +4136,10 @@ cmd:repararcar(playerid, params[])
 	    	return SendSyntaxMessage(playerid, "/repararcar [id/nombre]"COL_GREY".");
 
 		else if (!IsValidVehicle(vehicleid))
-	    	return SendErrorMessage(playerid, "El vehÌculo no existe.");
+	    	return SendErrorMessage(playerid, "El veh√≠culo no existe.");
 
 		RepairVehicle(vehicleid);
-    	SendOwnerAlert(COLOR_ADMIN, "[1339's] \"%s\" reparÛ el vehÌculo #%d.", PlayerName(playerid), vehicleid);
+    	SendOwnerAlert(COLOR_ADMIN, "[1339's] \"%s\" repar√≥ el veh√≠culo #%d.", PlayerName(playerid), vehicleid);
 	}
 	return true;
 }
@@ -4157,7 +4157,7 @@ cmd:traercar(playerid, params[])
 	    return SendSyntaxMessage(playerid, "/traercar [id/nombre]"COL_GREY".");
 
 	if (vehicleid < 1 || vehicleid > MAX_VEHICLES || !IsValidVehicle(vehicleid))
-		return SendErrorMessage(playerid, "El vehÌculo no existe.");
+		return SendErrorMessage(playerid, "El veh√≠culo no existe.");
 
 	static
 	    Float:x,
@@ -4170,7 +4170,7 @@ cmd:traercar(playerid, params[])
  	SetVehicleVirtualWorld(vehicleid, GetPlayerVirtualWorld(playerid));
 	LinkVehicleToInterior(vehicleid, GetPlayerInterior(playerid));
 	
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" llevÛ el vehÌculo #%d hacia su posiciÛn.", PlayerName(playerid), vehicleid);
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" llev√≥ el veh√≠culo #%d hacia su posici√≥n.", PlayerName(playerid), vehicleid);
 	return true;
 }
 
@@ -4250,13 +4250,13 @@ cmd:turno(playerid, params[])
 
 	if (!PlayerData[playerid][ADMIN_DUTY])
 	{
-		SendClientMessageToAllEx(COLOR_PIEL, "(( {838282}[OOC]"COL_PIEL" \"%s\" est· de turno administrativo. Puedes usar /soporte. ))", PlayerName(playerid));
+		SendClientMessageToAllEx(COLOR_PIEL, "(( {838282}[OOC]"COL_PIEL" \"%s\" est√° de turno administrativo. Puedes usar /soporte. ))", PlayerName(playerid));
 		
 		PlayerData[playerid][ADMIN_DUTY] = 1;
 	}
 	else
 	{
-	    SendClientMessageToAllEx(COLOR_PIEL, "(( {838282}[OOC]"COL_PIEL" \"%s\" ya no est· de turno administrativo. ))", PlayerName(playerid));
+	    SendClientMessageToAllEx(COLOR_PIEL, "(( {838282}[OOC]"COL_PIEL" \"%s\" ya no est√° de turno administrativo. ))", PlayerName(playerid));
 			
 		PlayerData[playerid][ADMIN_DUTY] = 0,
 		SetPlayerColor(playerid, COLOR_WHITE);
@@ -4304,7 +4304,7 @@ cmd:ir(playerid, params[])
 	}
 	else
 	{
-	 	if (!IsConnected(id)) return SendErrorMessage(playerid, "El jugador todavÌa no ingresÛ.");
+	 	if (!IsConnected(id)) return SendErrorMessage(playerid, "El jugador todav√≠a no ingres√≥.");
 
 		SendPlayerToPlayer(playerid, id);
 	}
@@ -4328,7 +4328,7 @@ cmd:makeadmin(playerid, params[])
 
 	if (!IsPlayerAdmin(playerid))
 	{
- 		SendAdminAlert(COLOR_ADMIN, "\"%s\" fallÛ al usar /makeadmin %d %d con \"%s\".", PlayerName(playerid), userid, level, PlayerName(userid));
+ 		SendAdminAlert(COLOR_ADMIN, "\"%s\" fall√≥ al usar /makeadmin %d %d con \"%s\".", PlayerName(playerid), userid, level, PlayerName(userid));
 
 		Log_Write("logs/admin_general.txt", "<%s> %s fallo al usar /makeadmin con %s.",
 			ReturnDate(),
@@ -4341,8 +4341,8 @@ cmd:makeadmin(playerid, params[])
 	SQL_Update_Int("accounts", PlayerName(userid), "ADMIN_LEVEL", level),
  	PlayerData[userid][ADMIN_LEVEL] = level;
 
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" ajustÛ el nivel administrativo de \"%s\". Ahora es %d.", PlayerName(playerid), PlayerName(userid), level);
-	SendAdminAction(userid, "\"%s\" ajustÛ tu nivel administrativo. Ahora es %d.", PlayerName(playerid), level);
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" ajust√≥ el nivel administrativo de \"%s\". Ahora es %d.", PlayerName(playerid), PlayerName(userid), level);
+	SendAdminAction(userid, "\"%s\" ajust√≥ tu nivel administrativo. Ahora es %d.", PlayerName(playerid), level);
 	return true;
 }
 
@@ -4360,13 +4360,13 @@ cmd:givemoney(playerid, params[])
 		return SendSyntaxMessage(playerid, "/givemoney [id/nombre] [cantidad]"COL_GREY".");
 
 	if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
 	SQL_Update_Int("accounts", PlayerName(userid), "MONEY", amount),
 	PlayerData[userid][MONEY] += amount;
 	
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" ha dado %s dÛlares a \"%s\".", PlayerName(playerid), FormatNumber(amount), PlayerName(userid));
-	SendAdminAction(userid, "\"%s\" te diÛ %s.", PlayerName(playerid), FormatNumber(amount));
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" ha dado %s d√≥lares a \"%s\".", PlayerName(playerid), FormatNumber(amount), PlayerName(userid));
+	SendAdminAction(userid, "\"%s\" te di√≥ %s.", PlayerName(playerid), FormatNumber(amount));
 	return true;
 }
 
@@ -4383,11 +4383,11 @@ cmd:variable(playerid, params[])
 
 	if (sscanf(params, "us[16]S()[32]", userid, type, amount))
  	{
-	 	SendSyntaxMessage(playerid, "/variable [id/nombre] [admin, gÈnero, nacimiento, dinero, banco, nivel, ...");
+	 	SendSyntaxMessage(playerid, "/variable [id/nombre] [admin, g√©nero, nacimiento, dinero, banco, nivel, ...");
 	 	SendClientMessage(playerid, COLOR_PIEL, "... experiencia, minutos, horas]"COL_GREY".");
 		return true;
 	}
-	else if (userid == INVALID_PLAYER_ID) return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	else if (userid == INVALID_PLAYER_ID) return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 	else if (!strcmp(type, "admin", true))
 	{
  	    if (isnull(amount) || strval(amount) < 0 || strval(amount) > 10)
@@ -4395,7 +4395,7 @@ cmd:variable(playerid, params[])
 	        
  		if (!IsPlayerAdmin(playerid))
  		{
- 		    SendAdminAlert(COLOR_ADMIN, "\"%s\" fallÛ al usar /variable %d admin %d con \"%s\".", PlayerName(playerid), userid, amount, PlayerName(userid));
+ 		    SendAdminAlert(COLOR_ADMIN, "\"%s\" fall√≥ al usar /variable %d admin %d con \"%s\".", PlayerName(playerid), userid, amount, PlayerName(userid));
  		    
      		Log_Write("logs/admin_general.txt", "<%s> %s fallo al usar /variable admin con %s.",
 				ReturnDate(),
@@ -4408,26 +4408,26 @@ cmd:variable(playerid, params[])
         SQL_Update_Int("accounts", PlayerName(userid), "ADMIN_LEVEL", strval(amount)),
         PlayerData[userid][ADMIN_LEVEL] = strval(amount);
 
-	 	SendAdminAlert(COLOR_ADMIN, "\"%s\" ajustÛ el nivel administrativo de \"%s\".", PlayerName(playerid), PlayerName(userid));
-		SendAdminAction(userid, "\"%s\" ajustÛ tu nivel administrativo. Ahora es %s.", PlayerName(playerid), FormatNumber(strval(amount), ""));
+	 	SendAdminAlert(COLOR_ADMIN, "\"%s\" ajust√≥ el nivel administrativo de \"%s\".", PlayerName(playerid), PlayerName(userid));
+		SendAdminAction(userid, "\"%s\" ajust√≥ tu nivel administrativo. Ahora es %s.", PlayerName(playerid), FormatNumber(strval(amount), ""));
 	}
-	else if (!strcmp(type, "genero", true) || !strcmp(type, "gÈnero", true))
+	else if (!strcmp(type, "genero", true) || !strcmp(type, "g√©nero", true))
 	{
 	    if (isnull(amount) || strval(amount) < 1 || strval(amount) > 2)
-	        return SendSyntaxMessage(playerid, "/variable [id/nombre] [gÈnero] (1: masculino y 2: femenino).");
+	        return SendSyntaxMessage(playerid, "/variable [id/nombre] [g√©nero] (1: masculino y 2: femenino).");
 
         SQL_Update_Int("accounts", PlayerName(userid), "GENDER", strval(amount)),
 		PlayerData[userid][GENDER] = strval(amount);
 
 		if (PlayerData[userid][GENDER] == 1)
 		{
-			SendAdminAlert(COLOR_ADMIN, "\"%s\" le ajustÛ el gÈnero a \"%s\". Ahora es masculino.", PlayerName(playerid), PlayerName(userid));
-        	SendAdminAction(userid, "\"%s\" ajustÛ tu gÈnero a masculino.", PlayerName(playerid));
+			SendAdminAlert(COLOR_ADMIN, "\"%s\" le ajust√≥ el g√©nero a \"%s\". Ahora es masculino.", PlayerName(playerid), PlayerName(userid));
+        	SendAdminAction(userid, "\"%s\" ajust√≥ tu g√©nero a masculino.", PlayerName(playerid));
         }
 		else if (PlayerData[userid][GENDER] == 2)
 		{
-			SendAdminAlert(COLOR_ADMIN, "\"%s\" le ajustÛ el gÈnero a \"%s\". Ahora es femenino.", PlayerName(playerid), PlayerName(userid));
-        	SendAdminAction(userid, "\"%s\" ajustÛ tu gÈnero a femenino.", PlayerName(playerid));
+			SendAdminAlert(COLOR_ADMIN, "\"%s\" le ajust√≥ el g√©nero a \"%s\". Ahora es femenino.", PlayerName(playerid), PlayerName(userid));
+        	SendAdminAction(userid, "\"%s\" ajust√≥ tu g√©nero a femenino.", PlayerName(playerid));
    		}
 	}
  	else if (!strcmp(type, "nacimiento", true))
@@ -4439,7 +4439,7 @@ cmd:variable(playerid, params[])
 		format(PlayerData[userid][BIRTHDATE], 24, amount);
 		
 		SendAdminAlert(COLOR_ADMIN, "\"%s\" ha seteado fecha de nacimiento a \"%s\" (%s).", PlayerName(playerid), PlayerName(userid), amount);
-        SendAdminAction(userid, "%s ajustÛ tu fecha de nacimiento. Ahora es %s.", PlayerName(playerid), amount);
+        SendAdminAction(userid, "%s ajust√≥ tu fecha de nacimiento. Ahora es %s.", PlayerName(playerid), amount);
 	}
  	else if (!strcmp(type, "dinero", true))
 	{
@@ -4452,8 +4452,8 @@ cmd:variable(playerid, params[])
         SQL_Update_Int("accounts", PlayerName(userid), "MONEY", strval(amount)),
 		PlayerData[userid][MONEY] = strval(amount);
 		
-		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajustÛ la cantidad de dinero que lleva \"%s\". Ahora tiene %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount)));
-        SendAdminAction(userid, "%s ajustÛ el dinero que llevas. Ahora tienes %s.", PlayerName(playerid), FormatNumber(strval(amount)));
+		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajust√≥ la cantidad de dinero que lleva \"%s\". Ahora tiene %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount)));
+        SendAdminAction(userid, "%s ajust√≥ el dinero que llevas. Ahora tienes %s.", PlayerName(playerid), FormatNumber(strval(amount)));
         
 		Log_Write("logs/admin_money.txt", "<%s> %s ajusto el dinero en mano de %s a %s.",
 			ReturnDate(),
@@ -4473,8 +4473,8 @@ cmd:variable(playerid, params[])
         SQL_Update_Int("accounts", PlayerName(userid), "BANK_MONEY", strval(amount)),
 		PlayerData[userid][BANK_MONEY] = strval(amount);
 		
-		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajustÛ el dinero en banco de \"%s\". Ahora tiene %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount)));
-        SendAdminAction(userid, "%s ajustÛ tu dinero en banco. Ahora tienes %s.", PlayerName(playerid), FormatNumber(strval(amount)));
+		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajust√≥ el dinero en banco de \"%s\". Ahora tiene %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount)));
+        SendAdminAction(userid, "%s ajust√≥ tu dinero en banco. Ahora tienes %s.", PlayerName(playerid), FormatNumber(strval(amount)));
         
 		Log_Write("logs/admin_money.txt", "<%s> %s ajusto el dinero en el banco de %s a %s.",
 			ReturnDate(),
@@ -4491,8 +4491,8 @@ cmd:variable(playerid, params[])
         SQL_Update_Int("accounts", PlayerName(userid), "SCORE", strval(amount)),
 		PlayerData[userid][SCORE] = strval(amount);
 		
-		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajustÛ el nivel de \"%s\". Ahora es %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount), ""));
-        SendAdminAction(userid, "%s ajustÛ tu nivel. Ahora eres %s.", PlayerName(playerid), FormatNumber(strval(amount), ""));
+		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajust√≥ el nivel de \"%s\". Ahora es %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount), ""));
+        SendAdminAction(userid, "%s ajust√≥ tu nivel. Ahora eres %s.", PlayerName(playerid), FormatNumber(strval(amount), ""));
         
   		Log_Write("logs/admin_general.txt", "<%s> %s ajusto el nivel de %s a %s.",
 			ReturnDate(),
@@ -4509,8 +4509,8 @@ cmd:variable(playerid, params[])
         SQL_Update_Int("accounts", PlayerName(userid), "EXPERIENCE", strval(amount)),
 		PlayerData[userid][EXPERIENCE] = strval(amount);
 		
-		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajustÛ los puntos de experiencia de \"%s\". Ahora tiene %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount), ""));
-        SendAdminAction(userid, "%s ajustÛ tus puntos de experiencia. Ahora tienes %s.", PlayerName(playerid), FormatNumber(strval(amount), ""));
+		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajust√≥ los puntos de experiencia de \"%s\". Ahora tiene %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount), ""));
+        SendAdminAction(userid, "%s ajust√≥ tus puntos de experiencia. Ahora tienes %s.", PlayerName(playerid), FormatNumber(strval(amount), ""));
         
 		Log_Write("logs/admin_general.txt", "<%s> %s ajusto la experiencia de %s a %s.",
 			ReturnDate(),
@@ -4527,8 +4527,8 @@ cmd:variable(playerid, params[])
         SQL_Update_Int("accounts", PlayerName(userid), "PLAYING_MINUTES", strval(amount)),
 		PlayerData[userid][PLAYING_MINUTES] = strval(amount);
 
-		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajustÛ los minutos jugados de \"%s\". Ahora son %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount), ""));
-        SendAdminAction(userid, "%s ajustÛ los minutos jugados. Ahora son %s.", PlayerName(playerid), FormatNumber(strval(amount), ""));
+		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajust√≥ los minutos jugados de \"%s\". Ahora son %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount), ""));
+        SendAdminAction(userid, "%s ajust√≥ los minutos jugados. Ahora son %s.", PlayerName(playerid), FormatNumber(strval(amount), ""));
         
 		Log_Write("logs/admin_general.txt", "<%s> %s ajusto los minutos de %s a %s.",
 			ReturnDate(),
@@ -4545,8 +4545,8 @@ cmd:variable(playerid, params[])
         SQL_Update_Int("accounts", PlayerName(userid), "PLAYING_HOURS", strval(amount)),
 		PlayerData[userid][PLAYING_HOURS] = strval(amount);
 		
-		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajustÛ el total de horas jugadas de \"%s\". Ahora son %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount), ""));
-        SendAdminAction(userid, "%s ajustÛ el total de tus horas jugadas. Ahora son %s.", PlayerName(playerid), FormatNumber(strval(amount), ""));
+		SendAdminAlert(COLOR_ADMIN, "\"%s\" ajust√≥ el total de horas jugadas de \"%s\". Ahora son %s.", PlayerName(playerid), PlayerName(userid), FormatNumber(strval(amount), ""));
+        SendAdminAction(userid, "%s ajust√≥ el total de tus horas jugadas. Ahora son %s.", PlayerName(playerid), FormatNumber(strval(amount), ""));
         
 		Log_Write("logs/admin_general.txt", "<%s> %s ajusto las horas de %s a %s.",
 			ReturnDate(),
@@ -4574,7 +4574,7 @@ cmd:explotar(playerid, params[])
 	    return true;
 
     if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
     new
 		Float:boomx,
@@ -4589,7 +4589,7 @@ cmd:explotar(playerid, params[])
 		CreateExplosion(boomx, boomy , boomz, 7, 10);
 		CreateExplosion(boomx, boomy , boomz, 6, 10);
 	
-        SendAdminAlert(COLOR_ADMIN, "\"%s\" auto-explotÛ por intentar explotar a \"%s\".", PlayerName(playerid), PlayerName(userid));
+        SendAdminAlert(COLOR_ADMIN, "\"%s\" auto-explot√≥ por intentar explotar a \"%s\".", PlayerName(playerid), PlayerName(userid));
 	    return true;
     }
     
@@ -4618,7 +4618,7 @@ cmd:slap(playerid, params[])
 	    return true;
 
     if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
     if (PlayerData[userid][ADMIN_LEVEL] > PlayerData[playerid][ADMIN_LEVEL])
 	    return true;
@@ -4632,7 +4632,7 @@ cmd:slap(playerid, params[])
 	SetPlayerPos(userid, x, y, z + 5);
 
 	PlayerPlaySound(userid, 1130, 0.0, 0.0, 0.0);
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" golpeÛ a \"%s\".", PlayerName(playerid), PlayerName(userid));
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" golpe√≥ a \"%s\".", PlayerName(playerid), PlayerName(userid));
 	return true;
 }
 
@@ -4646,18 +4646,18 @@ cmd:kick(playerid, params[])
 	    return INVALID;
 
 	if (sscanf(params, "us[128]", userid, reason))
-	    return SendSyntaxMessage(playerid, "/kick [id/nombre] [razÛn]"COL_GREY".");
+	    return SendSyntaxMessage(playerid, "/kick [id/nombre] [raz√≥n]"COL_GREY".");
 
     if (IsPlayerNPC(userid))
 	    return true;
 
 	if (userid == INVALID_PLAYER_ID || (IsPlayerConnected(userid)))
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
     if (PlayerData[userid][ADMIN_LEVEL] > PlayerData[playerid][ADMIN_LEVEL])
 	    return true;
 	    
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" ha sido expulsado por \"%s\", razÛn: %s.", PlayerName(userid), PlayerName(playerid), reason),
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" ha sido expulsado por \"%s\", raz√≥n: %s.", PlayerName(userid), PlayerName(playerid), reason),
 	Kick(userid);
 	return true;
 }
@@ -4677,18 +4677,18 @@ cmd:name(playerid, params[])
 	    return true;
 
 	if (userid == INVALID_PLAYER_ID || (IsPlayerConnected(userid)))
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
     if (PlayerData[userid][ADMIN_LEVEL] > PlayerData[playerid][ADMIN_LEVEL])
 	    return true;
 
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" ha sido expulsado desde /name por \"%s\", razÛn: Nombre irreal.", PlayerName(userid), PlayerName(playerid));
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" ha sido expulsado desde /name por \"%s\", raz√≥n: Nombre irreal.", PlayerName(userid), PlayerName(playerid));
 	
  	SendClientMessage(userid, COLOR_TOMATO, "Has sido expulsado por poseer un "COL_WHITE"nombre irreal"COL_TOMATO".");
 	SendClientMessage(userid, COLOR_WHITE, "1. Tu nombre debe cumplir con el formato "COL_TOMATO"Nombre_Apellido"COL_WHITE".");
 	SendClientMessage(userid, COLOR_WHITE, "2. Tanto el nombre como el apellido "COL_TOMATO"deben ser reales, no ficticios"COL_WHITE".");
-	SendClientMessage(userid, COLOR_WHITE, "3. No se permite utilizar apodo, pseudÛnimo, seudÛnimo o sobrenombre.");
-    SendClientMessage(userid, COLOR_TOMATO, "Sabiendo esto; vuelve a ingresar con el formato exigido. °Gracias!");
+	SendClientMessage(userid, COLOR_WHITE, "3. No se permite utilizar apodo, pseud√≥nimo, seud√≥nimo o sobrenombre.");
+    SendClientMessage(userid, COLOR_TOMATO, "Sabiendo esto; vuelve a ingresar con el formato exigido. ¬°Gracias!");
     
 	Kick(userid);
 	return true;
@@ -4709,15 +4709,15 @@ cmd:congelar(playerid, params[])
 	    return true;
 
     if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
     if (PlayerData[userid][ADMIN_LEVEL] > PlayerData[playerid][ADMIN_LEVEL])
 	    return true;
 
 	TogglePlayerControllable(playerid, false);
 	
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" congelÛ a \"%s\".", PlayerName(playerid), PlayerName(userid));
-	SendAdminAction(userid, "%s te congelÛ.", PlayerName(playerid));
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" congel√≥ a \"%s\".", PlayerName(playerid), PlayerName(userid));
+	SendAdminAction(userid, "%s te congel√≥.", PlayerName(playerid));
 	return true;
 }
 
@@ -4736,12 +4736,12 @@ cmd:descongelar(playerid, params[])
 	    return true;
 
     if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
 	TogglePlayerControllable(playerid, true);
 	
- 	SendAdminAlert(COLOR_ADMIN, "\"%s\" descongelÛ a \"%s\".", PlayerName(playerid), PlayerName(userid));
- 	SendAdminAction(userid, "%s te descongelÛ.", PlayerName(playerid));
+ 	SendAdminAlert(COLOR_ADMIN, "\"%s\" descongel√≥ a \"%s\".", PlayerName(playerid), PlayerName(userid));
+ 	SendAdminAction(userid, "%s te descongel√≥.", PlayerName(playerid));
 	return true;
 }
 
@@ -4760,15 +4760,15 @@ cmd:spawn(playerid, params[])
 	    return true;
 
     if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
 	if (!IsConnected(userid))
 	    return SendErrorMessage(playerid, "No esta spawneado.");
 
     SetDefaultSpawn(userid);
 
- 	SendAdminAlert(COLOR_ADMIN, "\"%s\" enviÛ al spawn a \"%s\".", PlayerName(playerid), PlayerName(userid));
-	SendAdminAction(userid, "%s te enviÛ al spawn.", PlayerName(playerid));
+ 	SendAdminAlert(COLOR_ADMIN, "\"%s\" envi√≥ al spawn a \"%s\".", PlayerName(playerid), PlayerName(userid));
+	SendAdminAction(userid, "%s te envi√≥ al spawn.", PlayerName(playerid));
 	return true;
 }
 
@@ -4788,7 +4788,7 @@ cmd:setskin(playerid, params[])
 	    return true;
 
     if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
 	if (skinid < 0 || skinid > 311)
 	    return SendErrorMessage(playerid, "Desde 0 hasta 311.");
@@ -4798,8 +4798,8 @@ cmd:setskin(playerid, params[])
 	SQL_Update_Int("accounts", PlayerName(userid), "SKIN", skinid),
 	PlayerData[userid][SKIN] = skinid;
 
- 	SendAdminAlert(COLOR_ADMIN, "\"%s\" cambiÛ el skin de \"%s\". Ahora es %d.", PlayerName(playerid), PlayerName(userid), skinid);
-	SendAdminAction(userid, "%s cambiÛ tu skin. Ahora tienes el %d.", PlayerName(playerid), skinid);
+ 	SendAdminAlert(COLOR_ADMIN, "\"%s\" cambi√≥ el skin de \"%s\". Ahora es %d.", PlayerName(playerid), PlayerName(userid), skinid);
+	SendAdminAction(userid, "%s cambi√≥ tu skin. Ahora tienes el %d.", PlayerName(playerid), skinid);
 	return true;
 }
 
@@ -4819,15 +4819,15 @@ cmd:traer(playerid, params[])
 	    return true;
 
     if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
 	if (!IsConnected(userid))
-		return SendErrorMessage(playerid, "Ese jugador todavÌa est· ingresando...");
+		return SendErrorMessage(playerid, "Ese jugador todav√≠a est√° ingresando...");
 
 	SendPlayerToPlayer(userid, playerid);
 	
 	SendAdminAction(playerid, "Has traido a \"%s\" hacia ti.", PlayerName(userid));
-	SendClientMessageEx(userid, COLOR_TOMATO, "%s te llevÛ hacia su posiciÛn.", PlayerName(playerid));
+	SendClientMessageEx(userid, COLOR_TOMATO, "%s te llev√≥ hacia su posici√≥n.", PlayerName(playerid));
 	return true;
 }
 
@@ -4844,15 +4844,15 @@ cmd:setinterior(playerid, params[])
 		return SendSyntaxMessage(playerid, "/setinterior [id/nombre] [interior]"COL_GREY".");
 
 	if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
 	SetPlayerInterior(userid, interior);
 	
 	SQL_Update_Int("accounts", PlayerName(userid), "INTERIOR", interior),
 	PlayerData[userid][INTERIOR] = interior;
 	
-    SendAdminAlert(COLOR_ADMIN, "\"%s\" cambiÛ el interior de \"%s\" a %d.", PlayerName(playerid), PlayerName(userid), interior);
-    SendAdminAction(userid, "%s cambiÛ tu interior. Ahora es %d.", PlayerName(playerid), interior);
+    SendAdminAlert(COLOR_ADMIN, "\"%s\" cambi√≥ el interior de \"%s\" a %d.", PlayerName(playerid), PlayerName(userid), interior);
+    SendAdminAction(userid, "%s cambi√≥ tu interior. Ahora es %d.", PlayerName(playerid), interior);
 	return true;
 }
 
@@ -4869,15 +4869,15 @@ cmd:setvw(playerid, params[])
 		return SendSyntaxMessage(playerid, "/setvw [id/nombre] [world]"COL_GREY".");
 
 	if (userid == INVALID_PLAYER_ID)
-	    return SendErrorMessage(playerid, "El jugador no est· conectado.");
+	    return SendErrorMessage(playerid, "El jugador no est√° conectado.");
 
 	SetPlayerVirtualWorld(userid, world);
 	
 	SQL_Update_Int("accounts", PlayerName(userid), "WORLD", world),
 	PlayerData[userid][WORLD] = world;
 	
-    SendAdminAlert(COLOR_ADMIN, "\"%s\" cambiÛ el mundo virtual de \"%s\" a %d.", PlayerName(playerid), PlayerName(userid), world);
-    SendAdminAction(userid, "%s cambiÛ tu mundo virtual. Ahora es %d.", PlayerName(playerid), world);
+    SendAdminAlert(COLOR_ADMIN, "\"%s\" cambi√≥ el mundo virtual de \"%s\" a %d.", PlayerName(playerid), PlayerName(userid), world);
+    SendAdminAction(userid, "%s cambi√≥ tu mundo virtual. Ahora es %d.", PlayerName(playerid), world);
 	return true;
 }
 
@@ -4902,7 +4902,7 @@ cmd:mandara(playerid, params[])
 
 	SendPlayerToPlayer(userid, targetid);
 
-	SendAdminAlert(COLOR_ADMIN, "\"%s\" llevÛ a \"%s\" hasta \"%s\".", PlayerName(playerid), PlayerName(userid), PlayerName(targetid));
-    SendAdminAction(userid, "%s te llevÛ hacia %s.", PlayerName(playerid), PlayerName(targetid));
+	SendAdminAlert(COLOR_ADMIN, "\"%s\" llev√≥ a \"%s\" hasta \"%s\".", PlayerName(playerid), PlayerName(userid), PlayerName(targetid));
+    SendAdminAction(userid, "%s te llev√≥ hacia %s.", PlayerName(playerid), PlayerName(targetid));
 	return true;
 }
