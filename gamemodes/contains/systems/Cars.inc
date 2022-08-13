@@ -1,14 +1,14 @@
-/* Sistema de vehículos por Benjes */
+/* Sistema de vehÃ­culos por Benjes */
 
 #define MAX_DYNAMIC_CARS (1000)
 #define MAX_OWNABLE_CARS (2)
 
 new stock g_arrVehicleNames[][] =
 {
-    "Landstalker", "Bravura", "Buffalo", "Linerunner", "Perrenial", "Sentinel", "Dumper", "Camión de bomberos", "Camión de basura",
+    "Landstalker", "Bravura", "Buffalo", "Linerunner", "Perrenial", "Sentinel", "Dumper", "CamiÃ³n de bomberos", "CamiÃ³n de basura",
     "Stretch", "Manana", "Infernus", "Voodoo", "Pony", "Mule", "Cheetah", "Ambulancia", "Leviathan", "Moonbeam",
     "Esperanto", "Taxi", "Washington", "Bobcat", "Whoopee", "BF Injection", "Hunter", "Premier", "Enforcer",
-    "Camión de seguridad", "Banshee", "Predator", "Bus", "Rhino", "Barracks", "Hotknife", "Trailer", "Previon", "Coach",
+    "CamiÃ³n de seguridad", "Banshee", "Predator", "Bus", "Rhino", "Barracks", "Hotknife", "Trailer", "Previon", "Coach",
     "Cabbie", "Stallion", "Rumpo", "RC Bandit", "Romero", "Packer", "Monster", "Admiral", "Squalo", "Seasparrow",
     "Faggio Pizza", "Tram", "Trailer", "Turismo", "Speeder", "Reefer", "Tropic", "Flatbed", "Yankee", "Caddy", "Solair",
     "Camioneta Berkley's RC", "Skimmer", "PCJ 600", "Faggio", "Freeway", "RC Baron", "RC Raider", "Glendale", "Oceanic",
@@ -17,13 +17,13 @@ new stock g_arrVehicleNames[][] =
     "Rancher", "Virgo", "Greenwood", "Jetmax", "Hotring", "Sandking", "Blista Compact", "Maverick",
     "Boxville", "Benson", "Mesa", "RC Goblin", "Hotring Racer A", "Hotring Racer B", "Bloodring Banger", "Rancher",
     "Super GT", "Elegant", "Journey", "Bicicleta", "Bicicleta", "Beagle", "Cropduster", "Stunt", "Tanker", "Roadtrain",
-    "Nebula", "Majestic", "Buccaneer", "Shamal", "Hydra", "FCR 900", "NRG 500", "HPV 1000", "Cement Truck", "Grúa",
-    "Fortune", "Cadrona", "Camión de SWAT", "Willard", "Forklift", "Tractor", "Combine", "Feltzer", "Remington", "Slamvan",
-    "Blade", "Streak", "Freight", "Vortex", "Vincent", "Bullet", "Clover", "Sadler", "Camión de bomberos", "Hustler", "Intruder",
+    "Nebula", "Majestic", "Buccaneer", "Shamal", "Hydra", "FCR 900", "NRG 500", "HPV 1000", "Cement Truck", "GrÃºa",
+    "Fortune", "Cadrona", "CamiÃ³n de SWAT", "Willard", "Forklift", "Tractor", "Combine", "Feltzer", "Remington", "Slamvan",
+    "Blade", "Streak", "Freight", "Vortex", "Vincent", "Bullet", "Clover", "Sadler", "CamiÃ³n de bomberos", "Hustler", "Intruder",
     "Primo", "Cargobob", "Tampa", "Sunrise", "Merit", "Utility", "Nevada", "Yosemite", "Windsor", "Monster", "Monster",
     "Uranus", "Jester", "Sultan", "Stratum", "Elegy", "Raindance", "RC Tiger", "Flash", "Tahoma", "Savanna", "Bandito",
     "Freight Flat", "Streak Carriage", "Kart", "Mower", "Dune", "Sweeper", "Broadway", "Tornado", "AT 400", "DFT 30",
-    "Huntley", "Stafford", "BF 400", "Camioneta de noticias", "Tug", "Trailer", "Emperor", "Wayfarer", "Euros", "Camión de comida", "Club",
+    "Huntley", "Stafford", "BF 400", "Camioneta de noticias", "Tug", "Trailer", "Emperor", "Wayfarer", "Euros", "CamiÃ³n de comida", "Club",
     "Freight Box", "Trailer", "Andromada", "Dodo", "RC Cam", "Launch", "Premier", "Premier", "Premier",
     "Rancher", "Picador", "SWAT", "Alpha", "Phoenix", "Glendale", "Sadler", "Luggage", "Luggage", "Stairs",
     "Boxville", "Tiller", "Utility Trailer"
@@ -77,7 +77,7 @@ enum carData
 	carTIRES,
 	Float:carDAMAGE,
  	carLIGHTS_STATUS,
-    carSTATION_URL[128],
+    	carSTATION_URL[128],
  	carGLOVE_BOX,
 	carGLOVE_BOX_QUANTITY,
 	carTRUNK_SLOTS,
@@ -109,7 +109,7 @@ enum coreVehicles
 new
 	CoreVehicles[MAX_VEHICLES][coreVehicles];
 
-new ColorToHex_LightsOn[256] = // FF cuando las luces están prendidas
+new ColorToHex_LightsOn[256] = // FF cuando las luces estÃ¡n prendidas
 {
 	// The existing colours from San Andreas
 	0xBBBBBBFF, 0xBBBBBBFF, 0x2A77A1FF, 0x840410FF, 0x263739FF, 0x86446EFF, 0xD78E10FF, 0x4C75B7FF, 0xBDBEC6FF, 0x5E7072FF,
@@ -141,7 +141,7 @@ new ColorToHex_LightsOn[256] = // FF cuando las luces están prendidas
 	0x561A28FF, 0x4E0E27FF, 0x706C67FF, 0x3B3E42FF, 0x2E2D33FF, 0x7B7E7DFF, 0x4A4442FF, 0x28344EFF
 };
 
-new ColorToHex_LightsOff[256] = // AA cuando las luces están apagadas
+new ColorToHex_LightsOff[256] = // AA cuando las luces estÃ¡n apagadas
 {
 	0xBBBBBB88, 0xBBBBBB88, 0x2A77A188, 0x84041088, 0x26373988, 0x86446E88, 0xD78E1088, 0x4C75B788, 0xBDBEC688, 0x5E707288,
 	0x46597A88, 0x656A7988, 0x5D7E8D88, 0x58595A88, 0xD6DAD688, 0x9CA1A388, 0x335F3F88, 0x730E1A88, 0x7B0A2A88, 0x9F9D9488,
@@ -580,7 +580,7 @@ stock EngineOn(vehicleid, playerid)
 
         TogglePlayerControllable(playerid, false);
         
-		SetPlayerChatBubble(playerid, "* está encendiendo el vehículo... *", COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
+		SetPlayerChatBubble(playerid, "* estÃ¡ encendiendo el vehÃ­culo... *", COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
 
 		new message[64];
 		format(message, sizeof(message), "~w~Encendiendo %s...", ReturnVehicleName(CarData[Car_GetID(vehicleid)][carVEHICLE]));
@@ -597,7 +597,7 @@ stock EngineOff(vehicleid, playerid)
         if (!IsABike(GetPlayerVehicleID(playerid))) ApplyAnimation(playerid, "PED", "CAR_tune_radio", 3.7, 0, 0, 0, 0, 0, 1);
         
         SetEngineStatus(vehicleid, false);
-		SetPlayerChatBubble(playerid, "* apagó el motor del vehículo. *", COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
+		SetPlayerChatBubble(playerid, "* apagÃ³ el motor del vehÃ­culo. *", COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
 
 		new message[64];
 		format(message, sizeof(message), "~w~%s apagado.", ReturnVehicleName(CarData[Car_GetID(vehicleid)][carVEHICLE]));
@@ -626,7 +626,7 @@ public EngineProgress(vehicleid, playerid)
         TogglePlayerControllable(playerid, true);
 	 	SetEngineStatus(vehicleid, true);
 
-		SetPlayerChatBubble(playerid, "* encendió el motor del vehículo. *", COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
+		SetPlayerChatBubble(playerid, "* encendiÃ³ el motor del vehÃ­culo. *", COLOR_PURPLE, TAG_DISTANCE, SECONDS(3));
 
 		new message[64];
 		format(message, sizeof(message), "~w~%s encendido.", ReturnVehicleName(CarData[Car_GetID(vehicleid)][carVEHICLE]));
@@ -692,15 +692,15 @@ stock ReturnVehicleName(vehicleid, type = -1)
 {
 	new
 		model = GetVehicleModel(vehicleid),
-		name[32] = "vehículo";
+		name[32] = "vehÃ­culo";
 
     if (model < 400 || model > 611)
 	    return name;
 
 	format(name, sizeof(name), g_arrVehicleNames[model - 400]);
 
-	if (type == 1) ConvertText(name, 2); // Minúscula
- 	else if (type == 2) ConvertText(name, 1); // Mayúscula
+	if (type == 1) ConvertText(name, 2); // MinÃºscula
+ 	else if (type == 2) ConvertText(name, 1); // MayÃºscula
 
 	return name;
 }
@@ -1015,15 +1015,15 @@ Car_Nearest(playerid)
 ReturnVehicleModelName(model, type = -1)
 {
 	new
-	    name[32] = "vehículo";
+	    name[32] = "vehÃ­culo";
 
     if (model < 400 || model > 611)
 	    return name;
 
     format(name, sizeof(name), g_arrVehicleNames[model - 400]);
 
-	if (type == 1) ConvertText(name, 2); // Minúscula
- 	else if (type == 2) ConvertText(name, 1); // Mayúscula
+	if (type == 1) ConvertText(name, 2); // MinÃºscula
+ 	else if (type == 2) ConvertText(name, 1); // MayÃºscula
  	
 	return name;
 }
